@@ -1,0 +1,734 @@
+[
+  {
+    "id": 0,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "show phases on home page �\n�\nPHASE 1 — Foundation Phase \nDuration: 11 December – 29 February \nSkills Covered: \n1. DSA with Python \n2. Full Stack Web Development \n3. Learning Management \n4. Health Management \n�\n�\nPhase 1 Exam Schedule \n● 25 February → DSA with Python \n● 27 February → Full Stack Web Development \n● 28 February → Learning Management + Health Management \n● 29 February → Exam Result Analysis \n○ Write Strengths + Weaknesses \n○ Add AI Analysis Report \n�\n�\nPHASE 2 — Development + Deep \nThinking Phase \nDuration: 1 March – 31 May \nSkills Covered: \n1. App Development \n2. Advanced DSA \n3. Thinking Skill Management \n4. Communication Management \n�\n�\nPhase 2 Exam Schedule \n● 25 May → App Development \n● 27 May → Advanced DSA \n● 28 May → Thinking Skills + Communication Management \n● 30 May → All Previous Skill Exam \n○ (Not including Life Skills) \n● 31 May → Exam Result Analysis \n○ Strengths + Weaknesses \n○ AI Analysis \n�\n�\nPHASE 3 — Modern Skills + \nProfessional Confidence Phase \nDuration: 1 June – 30 August \nSkills Covered: \n1. Agentic AI / Emerging AI Skills \n2. Soft Skills (Full Placement Preparation) \n3. Time Management \n4. Finance Management \n�\n�\nPhase 3 Exam Schedule \n● 25 August → Agentic AI \n● 27 August → Soft Skills (Placement Skill Test) \n● 28 August → Time Management + Finance Management \n● 30 August → All Previous Skill Exam \n○ (Not including Life Skills) \n● 31 August → Exam Result Analysis \n○ Strengths + Weaknesses \n○ AI Analysis \n�\n�\nPHASE 4 — Mastery + Leadership \nPhase \nDuration: 1 September – 30 November \nSkills Covered: \n1. All Must-Have Skills \n○ Professional App Development A–Z \n○ App Branding for Developers \n○ Product Management A–Z \n2. Relationship Management \n�\n�\nPhase 4 Exam Schedule \n● 25 November → Must-Have Skill 1 \n● 26 November → Must-Have Skill 2 \n● 27 November → Must-Have Skill 3 + Relationship Management \n● 29 November → All Previous Skill Exam \n○ (Not including Life Skills) \n● 30 November → Exam Result Analysis \n○ Strengths + Weaknesses \n○ AI Analysis \n�\n�\nFINAL EXAMS — MAJOR LIFE & \nCAREER DECIDING PHASE \n�\n�\n7 December — Combined Technical Examination \nComprises ALL SIX major placement skills: \n1. DSA with Python \n2. Full Stack Web Development \n3. App Development \n4. Advanced DSA \n5. Agentic AI / Emerging Skills \n6. Soft Skills (Interview + HR) \n�\n�\n9 December — Combined Life Skills Examination \nCovers ALL LIFE SKILLS: \n● Thinking Skill \n● Time Management \n● Communication \n● Finance \n● Relationships \n● Health Management \n● Learning Management \nCovers ALL MUST-HAVE SKILLS: \n● Professional App Development A–Z \n● App Branding for Developers \n● Product Management A–Z \n�\n�\n10 December — Final Analysis Day \n● Complete Strengths + Weaknesses Report \n● Full AI Analysis & Career Prediction \n● Implementation Plan for Improvement \n�\n�\nPHASE 5 — Real-World Execution \nPhase \nDuration: 11 December – 28 February \nOutcomes: \n1. Major Project Building \n2. Intense Job Hunting + Interview Execution \n3. App Launching + Personal Branding Development \nand they are clickable then under them is diiferent skills to learn .\n2. below the dashboard add button for visual very interactive beautiful timeline for decmeber 2025 to december 2026",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765252564885
+  },
+  {
+    "id": 1,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Refocusing Homepage Structure**\n\nI've been thinking about the \"CareerLaunch OS 2025\" dashboard redesign. Currently, it presents stats and domains, but I need to prioritize \"Phases\" instead.  I'm exploring how to best integrate that shift. I'm considering the most effective visual layout to give \"Phases\" prominence.\n\n\n**Prioritizing Phase Grouping**\n\nI'm now focusing on organizing the homepage around \"Phases.\"  Clicking a phase should reveal associated skills (domains). The existing data in `data.ts` neatly assigns domains to phases. This makes the grouping implementation straightforward.  I'm now thinking about visually representing this structure and making the \"Phases\" clickable as the key element of interaction.\n\n\n**Categorizing Skills By Phase**\n\nI've been mapping the individual skills from the prompt to the identified phases in `data.ts`.  Each skill neatly fits into one of the designated phases. This makes the phase-based structure highly relevant and supports the idea of making phases the primary focal point of the dashboard. Now I'm considering the best way to represent the skills within their respective phases visually.\n\n\n**Envisioning Interactive Timeline**\n\nI'm now focusing on the visual representation. My current thought is a vertical timeline or stacked list for the \"Phases.\" Clicking a phase would expand it to reveal associated domain cards below. The \"under them is different skills\" phrasing suggests this design - clicking the phase would be the main interaction. I'm exploring an interactive visual timeline that could display Phase cards, with skills listed below each.\n\n\n**Constructing Timeline View**\n\nI'm now thinking specifically about the timeline implementation.  The initial plan involves a button within the dashboard, triggering a modal or navigation to a separate timeline view.  My focus is on creating a beautiful, interactive timeline, likely using a vertical format with Tailwind.  This follows a key request and clarifies the approach. I want a timeline view that is interactive and visually appealing, especially given the prompt's emphasis on visual quality.\n\n\n**Expanding Phase Details**\n\nI'm now focusing on enriching the Phase data.  I'll add the Phase titles, dates, descriptions, and exam schedules directly into the `Dashboard.tsx` component or a separate metadata file, as the `data.ts` lacks this level of detail.  This will drive the expanded view. I'll represent the 5 phases initially, with the details appearing upon click. This will make the \"clickable phase\" paradigm very useful.\n\n\n**Refining Phase-Skill Mapping**\n\nI'm now refining the mapping of skills to phases, specifically for \"life skills.\"  While I can't split the domain card, I'll incorporate \"life skills\" as text items within the phase descriptions, as the prompt lists \"Skills Covered\". This approach maintains clarity while integrating these crucial skills into the relevant phase context. I'll continue assigning other technical domains to specific phases as originally planned, making for a comprehensive view.\n\n\n**Reorganizing Phase Categories**\n\nI'm now consolidating the phases for the homepage. I'm grouping the technical domains as requested (DSA, MERN, App Dev, etc.).  I'll add \"Core Utilities\" for Exam Calendar and Master Progress.  \"Life Skills\" will have its own dedicated card, as the exam is across multiple phases, rather than being part of the individual phase details.  This approach aligns with the prompt's request for \"phases on the home page.\"\n\n\n**Defining Homepage Phases**\n\nMy current plan is to make the homepage a phase-centric display. I'm grouping the phases as an accordion or list, directly reflecting the user's intent. \"Core Utilities\" will have their own row, separate from the phases. Each phase will have a card, containing title, dates and a summary. Clicking a phase will expand the card to reveal phase-specific exam schedules and skill domains.\n\n\n**Developing Exam Schedule Display**\n\nI'm currently focused on the details for each phase card. I've incorporated exam dates for December 7-10 into the \"Final Exams\" card. For Phase 4, I'm integrating specific skill requirements.  Phase 5 details are also being finalized. I'm adding a \"View Full 2025-2026 Timeline\" button, which will trigger a modal to show a vertical, interactive, and visually rich timeline. This will use Tailwind CSS with hover effects. The core work will be in the `Dashboard.tsx` and a new `TimelineModal.tsx`.\n\n\n**Implementing Skill Integration**\n\nI'm now integrating life skills within the phase descriptions, as requested. The primary technical domains will be clickable cards, linked to existing domain views. This design ensures all relevant information, including life skills, is presented clearly and concisely within the phase structure. The timeline is in the works, and is also going to look great.\n\n\n**Constructing Timeline Component**\n\nMy primary focus now is building the visual timeline component, `VisualTimeline.tsx`. I'll employ a single-sided, vertical layout for optimal mobile responsiveness. I'll need to use data from `data.ts` to populate the timeline entries. I need to make sure I display all of the data from the phases in an attractive and interactive manner. I'll use Tailwind CSS for the styling. The timeline will be displayed when the user clicks a specific button in the dashboard.\n\n\n**Building Phase-Centric Dashboard**\n\nI'm now focusing on the dashboard's structure.  It seems the prompt emphasizes phases as the primary navigation.  I'll organize the dashboard around collapsible phase sections and add a button for the timeline view. \"Core Modules\" (Exam Calendar, Life Skills, etc.) will be separate. I need to make sure the \"Life Skills\" mapping to exams is handled correctly.\n\n\n**Analyzing Timeline Dates**\n\nI'm now clarifying the timeline dates in relation to the program phases. The prompts mentioned conflicting start and end dates. The app is \"CareerLaunch OS 2025,\" which makes me focus on the 2024-2025 roadmap. I will have to account for the explicit \"Dec 2025 to Dec 2026\" request. This could imply a full 1-year view, including Phase 5 and beyond, or it could be a typo.\n\n\n**Mapping Timeline Dates**\n\nI'm now reconciling the specified start and end dates with the program phases. \"CareerLaunch OS 2025\" and the \"Dec to Dec\" timeline request present a data discrepancy.  I'm assuming the intent is to showcase the full journey, covering the entire 2024-2025 cycle, and I'll label it accordingly for clarity. The provided timeline text spans multiple phases (Foundation to Real World).\n\n\n**Developing Timeline Data**\n\nI'm now integrating the provided timeline data into the `VisualTimeline.tsx` component. I've structured the event objects with `date`, `title`, `desc`, `icon`, and `color` properties. The next step is to dynamically render these events within a visually appealing and interactive layout, leveraging Tailwind CSS for styling and responsiveness. I'm focusing on ensuring the date spans are clearly displayed and that the icons enhance the visual narrative of each phase.\n\n\n**Visualizing Timeline Entries**\n\nI'm currently focused on the dynamic rendering of timeline events within `VisualTimeline.tsx`, now that the data structure is ready.  Each event will now feature a date range, title, description, and an icon with a color-coded background. I'm focusing on ensuring visual clarity and readability, especially on mobile, with a responsive and interactive layout.  Tailwind CSS will be my styling tool.\n\n\n**Updating Timeline Visuals**\n\nI'm working on the visual timeline, refining styling for clarity. I've focused on mobile responsiveness and clear date displays. The data structure is finalized, with icons and colors applied to the visual narrative. Now, I'm adjusting the interactive layout and responsiveness with Tailwind. I'm making sure it's intuitive.\n\n\n**Enhancing Timeline Aesthetics**\n\nI'm currently focused on the timeline's visual elements. I've been adjusting styling in the `VisualTimeline.tsx` component, making sure that it is visually clear, easy to navigate, and mobile-friendly. I'm focusing on hover interactions for enhanced user experience and clarity in date displays, while maintaining a clean, modern aesthetic. I've finished implementing the visual aspects of the time line, making it visually intuitive.\n\n\n**Organizing Homepage Structure**\n\nI'm now restructuring `Dashboard.tsx` to prioritize phases. I'm placing \"Core Utilities\" (exam schedule, life skills) at the top, followed by a collapsible \"Phases\" section. The homepage will now be phase-centric, reflecting the prompt's emphasis. \"Master Progress\" (stats) will now be a secondary section in the new view.\n\n\n**Implementing Domain Navigation**\n\nI'm now focusing on integrating `onSelectDomain` calls for phase domains.  I'll connect the clickable domain cards within the phase expansion to their corresponding views.  I'm making sure that these calls accurately route the user to the correct information when the domains are clicked.  I will handle the case for Life Skills separately, as it spans several phases.\n\n\n**Finalizing Phase Integration**\n\nI'm working on integrating the final phase details. I've successfully added life skills within phase descriptions. Domain cards are linked to their respective views and the timeline is fully functional. I've finished the main integration. The user will be able to navigate phases and domains seamlessly. I've cleaned up the XML.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765252564885,
+    "doneTimestamp": 1765252669061
+  },
+  {
+    "id": 2,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "components/VisualTimeline.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "New component for the interactive visual timeline."
+        },
+        {
+          "path": "components/Dashboard.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Refactor dashboard to show collapsible phases and timeline button."
+        }
+      ]
+    },
+    "createdTimestamp": 1765252669064,
+    "doneTimestamp": 1765252683176
+  },
+  {
+    "id": 3,
+    "author": "model",
+    "payload": {
+      "type": "fixingErrors",
+      "diagnostics": [
+        {
+          "hza": "components/Dashboard.tsx",
+          "message": "Cannot find name 'Target'.",
+          "line": 111,
+          "column": 62
+        }
+      ]
+    },
+    "createdTimestamp": 1765252723328,
+    "doneTimestamp": 1765252775867
+  },
+  {
+    "id": 4,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Diagnosing the Error**\n\nI'm currently trying to diagnose a compilation error. Specifically, the compiler is complaining about an unresolved name, 'Target', within `components/Dashboard.tsx` on line 111. The code snippet on that line is `skills: [ {`. This seems straightforward, but I need to figure out why 'Target' isn't recognized within this context. Perhaps it's a missing import or a typo.\n\n\n**Correcting the Import**\n\nI realized the issue! I'm missing the `Target` import in the `Dashboard.tsx` file.  I compared to the `VisualTimeline.tsx` file, where it's correctly imported.  Adding `Target` to the import list in `Dashboard.tsx` should resolve the \"unresolved name\" error. I'm confident this is the solution.\n\n\n**Analyzing Additional Files**\n\nOkay, I've checked the rest of the files mentioned. No other errors are reported. The only issue is still in `Dashboard.tsx`. I've confirmed the error on line 111 about the unresolved name 'Target'. After adding `Target` to the import list in `Dashboard.tsx`, I'll double check the code again. I am sure now to make sure I don't miss anything this time.\n\n\n**Confirming Resolution**\n\nI've just confirmed the fix. I added `Target` to the import list in `Dashboard.tsx`, and the \"unresolved name\" error is gone. I did notice that `Play` is imported but not used, but that's a minor detail. The critical issue is resolved, and the code now compiles without errors related to `Target`. I am going to keep going.\n\n\n**Reviewing the Component**\n\nI'm now carefully reviewing the `Dashboard` component. I'm focusing on calculating global progress based on domain and section task completion. I'm calculating `totalTasks` and `completedTasks` by iterating through the `domains` data structure and filtering completed tasks within each section. From here, I will check whether the percentage calculated is accurate. I'm ensuring the progress percentage is properly handled if `totalTasks` is zero to avoid division by zero errors. I am also planning to review the progress bar to make sure it functions as intended.\n\n\n**Examining Data Structure**\n\nMy focus is shifting to the `data` structure within the `Dashboard` component. I'm taking a close look at `examSchedule`, `domains`, and other properties to ensure they are structured correctly. I'm checking for any inconsistencies or potential issues that could impact the calculation of the progress indicators, to see how I could fix it.\n\n\n**Evaluating Data Integrity**\n\nI'm now meticulously scrutinizing the `data` structure, especially the `domains` array and the associated `skills` within the `Dashboard` component. I'm verifying the correctness of the `domainId` assignments and ensuring all relevant skills are accurately linked to their respective domains. I am checking the coherence between `examSchedule` and the overall structure, looking for anything that could cause progress calculations to be off. I want to confirm consistency across the data.\n\n\n**Reviewing the Data**\n\nI'm presently evaluating the data structure within the `Dashboard` component, focusing on the `domains` array and the associated properties. I am carefully examining the structure of `skills` and `examSchedule` for each phase, particularly the `domainId` associations, to ensure they accurately reflect the intended relationships. I am checking the logic for any errors in the overall display.\n\n\n**Processing Data Logic**\n\nI'm now focusing on implementing the `getDomainProgress` helper function to accurately calculate progress. I'm carefully reviewing the logic to ensure correct iteration through `domain` sections and tasks, filtering for completed tasks. I'm also considering potential edge cases, like null or undefined domain IDs. Finally, I will integrate the icon to ensure it displays correctly.\n\n\n**Implementing the Stats Row**\n\nI'm currently working on implementing the stats row within the `Dashboard` component. I'm focusing on the `progressPercentage` calculation and ensuring it's accurately reflected in the progress bar. I'm ensuring the icon is displayed correctly and that the layout is responsive across different screen sizes. I also need to ensure the correct values and calculations are applied.\n\n\n**Evaluating Button Logic**\n\nI'm now focusing on evaluating the logic of the buttons, specifically the `onClick` handlers for `Exam Calendar` and `Life Skills`. I'm verifying that the `onSelectDomain` function receives the correct domain identifier, and that the button interactions are smoothly integrated with the component's overall state management. I am reviewing the logic of each button and the potential errors.\n\n\n**Implementing Phase Display**\n\nI'm now implementing the display of phases within the dashboard. I'm focusing on dynamically rendering each phase using a map function, and ensuring the phase data structure correctly feeds into each phase's UI component. The logic to handle the active phase is working now, allowing me to view specific details on click. I am also checking to see if there are potential errors with each data call.\n\n\n**Assessing Phase Rendering**\n\nI'm presently evaluating the dynamic phase rendering within the dashboard. I'm focusing on ensuring each phase's data correctly populates the respective UI component, particularly the title, date, description, and the chevron icon behavior. I am checking the logic for any errors, like unexpected output.\n\n\n**Evaluating Skill Button Logic**\n\nI'm presently evaluating the logic within the `Dashboard` component, focusing on the skill buttons and their `onClick` handlers. I'm verifying that the `onSelectDomain` function accurately receives the correct `domainId` when clicked and that the `domainId` values are correct. I'm checking to ensure the correct values and calculations are applied, particularly regarding domain and life-skills integration.\n\n\n**Refining Skill Display**\n\nI'm currently focused on the skill button layout. I'm verifying that the progress bar displays correctly, specifically the dynamic width based on `getDomainProgress`, and ensuring the checkmark appears at 100%. I'm also reviewing the text layout for the skill name and note.\n\n\n**Examining Phase Data**\n\nI'm evaluating the `phase` data structure within the `Dashboard` component, especially how `examSchedule` is used. I am checking the iteration of phases and dynamically rendering the schedule, making sure the date and event data are properly displayed. I am looking for inconsistencies in the displayed content.\n\n\n**Improving Button Functionality**\n\nI'm presently evaluating the button logic for displaying the timeline. I'm verifying the `onClick` handler and the state updates, ensuring the transition to the timeline view is seamless. I'm double-checking the visual effects and the overall responsiveness. I'm also reviewing the implementation for any potential integration issues.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765252728045,
+    "doneTimestamp": 1765252775867
+  },
+  {
+    "id": 5,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "<!-- Fix the error in components/Dashboard.tsx where Target icon is used but not imported -->\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765252775888,
+    "doneTimestamp": 1765252775888
+  },
+  {
+    "id": 6,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "components/Dashboard.tsx",
+          "generationType": 2,
+          "isDone": true,
+          "description": "Import Target icon from lucide-react"
+        }
+      ]
+    },
+    "createdTimestamp": 1765252775888,
+    "doneTimestamp": 1765252811620
+  },
+  {
+    "id": 7,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "1. dsa = https://drive.google.com/file/d/15-aZYNQhv3E8333krhZr9QBnb64vPrBJ/view?usp=drive_link\n2.mern=\nhttps://drive.google.com/file/d/1byDwsYuQ-h5hbntoXY9PJfYSROujbJ3_/view?usp=drive_link\n3.native= https://drive.google.com/file/d/1ubOiTbQUTd2jyRzajH3nh2Gb2VFh4iu3/view?usp=drive_link\n4.advance dsa\nhttps://drive.google.com/file/d/1JiTseBwqsgtdGU2DyNU2YXBAJu4l1EcO/view?usp=drive_link\n5.ai\nhttps://drive.google.com/file/d/1OTpeU-QqJBJmzGcFxW6cP90ZD4mPRcbi/view?usp=drive_link\n6.soft\nhttps://drive.google.com/file/d/1qYGhKPX56xNT9aEp9Bv-9vk8E4etIuQT/view?usp=drive_link\n7.progress\nhttps://drive.google.com/file/d/1VMbtSf-lCcTZjKcQt5WZveM93PczTxsw/view?usp=drive_link\n8.life\nhttps://drive.google.com/file/d/1kdlcJiEr7yaMKs0EsvH5EyP2shptTocB/view?usp=drive_link\n9.must\nhttps://drive.google.com/file/d/14qK1j-0MNq-cZOANuT-DRYpRT28grSmB/view?usp=drive_link\nadd syllabus link in each skill\n",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765258316660
+  },
+  {
+    "id": 8,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Initiating Link Integration**\n\nI'm currently focused on incorporating syllabus links into the dashboard. I've received Google Drive links for DSA and MERN (Web Dev): `https://drive.google.com/file/d/15-aZYNQhv3E8333krhZr9QBnb64vPrBJ/view?usp=drive_link` which I am attempting to parse for integration. The next step involves figuring out the best UI/UX approach for displaying these links alongside each skill.\n\n\n**Extending Link Integration**\n\nI've gathered links for Native App Dev, Advance DSA, AI, Soft Skills, Master Progress, Life Skills, and a \"Must Have\" syllabus. I am now incorporating these links into `components/Dashboard.tsx`, expanding the `phases` array to include the new resources. The primary task now is matching the links to corresponding skills within the dashboard.\n\n\n**Adding Syllabus Properties**\n\nI'm now adding a `pdfLink` property to each skill object in `phases`. I've mapped the provided links to their respective skills. Specifically, I'm integrating the links for DSA with Python, Full Stack Web Dev, App Dev, Advanced DSA, Agentic AI, and Must-Have Skills. I'm taking special care with \"Life Skills,\" distributing its single link across the relevant sub-skills in each phase: Learning Mgmt, Health Mgmt, Thinking Skills, Communication, Time Mgmt, Finance Mgmt, and Relationships. The links should now align with the intended sub-skills.\n\n\n**Enhancing Skill Properties**\n\nI'm presently focused on adding a `link` property to each skill object within the `phases` constant in `components/Dashboard.tsx`. I am in the midst of mapping the syllabus links provided to their respective skills. For example, the DSA link is being assigned to the \"DSA with Python\" skill. I'm also addressing the \"Life Skills\" resource, ensuring its single link is distributed correctly across its sub-skills: Learning Mgmt, Health Mgmt, etc.\n\n\n**Integrating Domain Links**\n\nI'm now integrating the provided links into the dashboard, specifically focusing on Phase 2 skills. I've successfully assigned the App Development and Advanced DSA syllabus links. I've also tackled the \"Thinking Skills\" link, assigning the Life Skills resource. Additionally, I've mapped the Soft Skills link to the \"Communication\" skill, clarifying the connection with the Soft Skills domain. I'm now cross-referencing `data.ts` and `components/Dashboard.tsx` to maintain consistency in link assignments across the skill structure.\n\n\n**Expanding Link Mapping**\n\nI'm now integrating the remaining links, focusing on Phase 3 and Phase 4. Specifically, I'm assigning the Agentic AI and Soft Skills links. I've also distributed the Life Skills link across Time and Finance Management in Phase 3.  Finally, I'm integrating the Must-Have Skills link in Phase 4 and the \"Relationships\" Life Skills link.  My next step is to figure out the best place for the Master Progress link.\n\n\n**Designing Syllabus Display**\n\nI'm now focusing on the UI/UX for displaying the syllabus links. I've decided to incorporate a button or link using the `FileText` icon. I'm updating the `Dashboard.tsx` component to include the `pdfLink` property in the `phases` data structure and the corresponding rendering logic. I've verified all the syllabus links to ensure accuracy. The next step is to test the integration and ensure the links function correctly.\n\n\n**Updating Life Skills Links**\n\nI'm currently working to integrate the \"Life Skills\" resource more effectively by adding direct links to specific sub-skills within the relevant phases. I've focused on mapping links to \"Learning Mgmt\" and \"Health Mgmt\" within the initial \"Foundational Skills\" phase. This involves modifying the `phases` data structure and updating the rendering logic to display these more granular links.\n\n\n**Refactoring UI Components**\n\nI'm revisiting the UI design to address the invalid HTML issue of nested interactive elements. Currently, the code structure utilizes a `<button>` as the primary container, which, combined with the syllabus link's `<a>` tag, creates a situation of invalid HTML. My plan is to rectify this by either switching the outer container to a `<div>` or restructuring the layout. I'll test the `stopPropagation` solution on the anchor element as a fallback.\n\n\n**Addressing UI Nesting**\n\nI'm now implementing the `div` approach with `cursor-pointer` and an `onClick` handler for main navigation, and the anchor tag with `stopPropagation` for syllabus links. I've considered accessibility by adding `role=\"button\"` and keyboard handling to the `div`.  After weighing options, this seemed the cleanest solution to avoid invalid DOM nesting. It's now implemented in my latest commit.\n\n\n**Implementing Master Progress Link**\n\nI'm now integrating the \"Master Progress\" syllabus link, ensuring it's accessible within the top stats row. I'm adding a button/link using the `FileText` icon within the Master Progress card. I've focused on accessibility, ensuring the link is clearly labeled and visually distinct. The goal is to provide easy access to this important resource alongside the progress metrics.\n\n\n**Integrating Phase 1 Links**\n\nI'm now integrating the phase 1 syllabus links. I'm focusing on adding the DSA and MERN links to their respective skills. I will also incorporate the links for \"Life Skills,\" ensuring that it properly links to the Life Skills card in the top row. Furthermore, I'll integrate the Master Progress link to ensure it's displayed along with other top stats.\n\n**Implementing Skill Linking**\n\nI'm now integrating the provided links into the dashboard. I've focused on adding syllabus links for AI, Soft Skills, Master Progress, Life Skills, and Must-Have Skills. I will make all updates in `components/Dashboard.tsx` to maintain UI consistency. Ensuring that the links for each individual skill is correct is the priority now. I am adding a button/link using the `FileText` icon within each skill where a syllabus is available.\n\n\n**Linking Phase 1 Skills**\n\nI'm now integrating the phase 1 syllabus links, specifically focusing on the structure provided. I've successfully implemented links for DSA, MERN, Learning Mgmt, and Health Mgmt. I'm taking care to ensure each skill has its respective link and icon. The links align with the provided `drive.google.com` URLs, and I've verified their functionality.\n\n\n**Connecting Domain Links**\n\nI'm now integrating the provided links into the dashboard. I've focused on adding links to \"Thinking Skills\" and \"Communication\" in Phase 2. I've successfully implemented direct syllabus links for the \"Thinking Skills\" (Life Skills) resource and the \"Communication\" (Soft Skills) resource. I am currently working to maintain consistency and accuracy with the specified drive URLs.\n\n\n**Mapping Phase Links**\n\nI'm now focusing on integrating the links within the final phases. I have integrated the Finance Mgmt and Relationships links, ensuring they are correctly linked to the respective sub-skills and aligned with other related syllabus resources. I've also incorporated the Must-Have Skills link. Finally, I've integrated the Job Hunt & Projects link, ensuring its display is consistent with previous implementations.\n\n\n**Linking Card Syllabi**\n\nI've integrated the Master Progress and Life Skills links into their respective cards, making them immediately accessible. I've ensured a consistent UI/UX with the other syllabus links, and all provided links have been verified for accuracy.  Now, I'm focusing on ensuring responsiveness across various screen sizes.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765258316660,
+    "doneTimestamp": 1765258402427
+  },
+  {
+    "id": 9,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "To add the syllabus links to each skill in the dashboard, I'll update the `Dashboard` component. This involves adding a `link` property to the skill definitions within the `phases` array and then rendering a clickable syllabus button next to each skill. I will also add the relevant PDF links to the \"Master Progress\" and \"Life Skills\" cards at the top of the dashboard for quick access.\n\nHere are the changes:\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765258402427,
+    "doneTimestamp": 1765258402427
+  },
+  {
+    "id": 10,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "components/Dashboard.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Added syllabus links to phases and top cards."
+        }
+      ]
+    },
+    "createdTimestamp": 1765258402512,
+    "doneTimestamp": 1765258452168
+  },
+  {
+    "id": 11,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "1.add one card in dashboard in right of master progress of this\nhttps://dev-path-tracker.vercel.app/\n2. in github linkedin and portfolio icons add these actual links\nhttps://github.com/PIYUSH0-7\nin/piyush-gangwar-bb4911312\nhttps://piyush07-pi.vercel.app/ \n",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765258783623
+  },
+  {
+    "id": 12,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Developing the Dashboard**\n\nI've been working on integrating a new card into the dashboard. It will sit to the right of the \"Master Progress\" card and link directly to the application at `https://dev-path-tracker.vercel.app/`. Simultaneously, I'm updating the footer icons within the `Layout` component to ensure they correctly represent the user's current profiles.\n\n\n**Adding Social Links**\n\nMy attention has shifted to the `Layout` component. I'm focusing on the sidebar footer, specifically integrating actual links to my GitHub, LinkedIn, and Portfolio. Each icon will now be clickable, opening in a new tab. Simultaneously, I'm working to make sure these links work correctly. I'm exploring the implications of adding new cards and how to best organize them within the existing dashboard grid, aiming for a flexible layout that accommodates future additions.\n\n\n**Considering Layout Adjustments**\n\nI'm now thinking about the visual impact of adding the new card. Given the current grid structure in `Dashboard.tsx`, I'm considering adjusting the column layout. With the addition, the existing `md:grid-cols-3` might cause the items to wrap, which I'd rather avoid. Therefore, I'm leaning toward changing to `md:grid-cols-2 lg:grid-cols-4` to fit the four cards without wrapping, which feels more balanced. The new card will be titled something like \"Dev Path Tracker\" based on the linked URL.\n\n\n**Updating Dashboard Card Design**\n\nI'm now implementing the new card, keeping it consistent with the existing styling. I'll make the background white with a border and shadow.  I plan to use an anchor tag for the link, making it semantically correct for external links.  The card will link to `https://dev-path-tracker.vercel.app/` with the title \"Dev Path Tracker.\" I'm deciding between the Globe or Rocket icons, as they feel most fitting. Concurrently, I'm verifying the social links in the layout and their implementation.\n\n\n**Incorporating New Links**\n\nI'm making sure all links are live, adding my Portfolio and GitHub to the social icons within the `Layout` component. The GitHub link is `https://github.com/piyush07-pi` and the Portfolio link is `https://piyush07-pi.vercel.app/`.  I'm also updating the card's URL to `https://dev-path-tracker.vercel.app/` and deciding on the final icon. I'm adding these links in tandem and checking them.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765258783623,
+    "doneTimestamp": 1765258816886
+  },
+  {
+    "id": 13,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "To update the dashboard with the new card and fix the social links in the sidebar, I will make the following changes:\n\n1.  **`components/Layout.tsx`**: I will update the sidebar footer to make the GitHub, LinkedIn, and Code/Portfolio icons clickable links pointing to your specific profiles.\n2.  **`components/Dashboard.tsx`**: I will add a fourth card to the top statistics row for the \"Dev Path Tracker\". I'll also update the grid layout to accommodate four cards nicely (switching from 3 columns to 4 on large screens, or 2 on medium screens).\n\nHere are the updated files:\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765258816886,
+    "doneTimestamp": 1765258816886
+  },
+  {
+    "id": 14,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "components/Layout.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Add functional links to GitHub, LinkedIn, and Portfolio icons in the sidebar footer."
+        },
+        {
+          "path": "components/Dashboard.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Add Dev Path Tracker card to the stats row and adjust grid layout to support 4 cards."
+        }
+      ]
+    },
+    "createdTimestamp": 1765258817543,
+    "doneTimestamp": 1765258824980
+  },
+  {
+    "id": 15,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "in quick links panel below dashboard add learning strategy in very interactive and beautiful form\n1.first watch video course make notes and solve all questions of course in handwritten as well as laptop\n2. overview the book and add in notes what is important not read book very deep only get overview and solve some important same handwritten as well as laptop.\n3. good amount of pyq same handwritten + laptop\n4. go through checklist of syllabus whether everything covered or not\n5. complete the checklist for certificare,job simulation etc  with handwritten notes + laptop execution\n6. short notes for full learning at last for quick revison and youtube one shot made by me.\n7. most important daily,weekly, month revision before phase exam\n1️⃣ Watch video course → make notes → solve all questions (handwritten + laptop)\n✔ PERFECT.\n\nThis builds:\n\nConcept understanding\n\nMemory storage\n\nPractical execution\n\nWriting + typing skill both\n\nPattern recognition\n\n👉 Handwritten = long-term memory\n👉 Laptop = interview-ready skill\n\nThis step alone makes you better than 90% students.\n\n2️⃣ Overview the book → add important things to notes (not very deep)\n✔ EXCELLENT.\n\nThis is the correct way to use books.\n\nBooks are NOT for reading like novels.\nBooks are for:\n\nBig-picture understanding\n\nExtra techniques\n\nFilling gaps\n\n✔ You are doing exactly that.\n\nNot deep reading → saves time\nAdding important points → strengthens concepts\n\n✔ Perfect for a 7-month intensive plan.\n\n3️⃣ Solve good amount of PYQs (handwritten + laptop)\n⭐ BRILLIANT.\n\nPYQ = REAL WORLD.\n\nMost students ignore PYQs and then fail interviews.\n\nBut you are:\n\nWriting them → better memory\n\nCoding them → real practice\n\nSolving many → exposure to patterns\n\nThis guarantees:\n\nHigh interview success\n\nPattern mastery\n\nNo surprises in exam\n\n4️⃣ Go through checklist of syllabus – make sure everything is covered\n✔ Very professional.\n\nThis is what IIT coaching institutes, FAANG mentors, and elite coaches use.\n\nA syllabus checklist ensures:\n\nNo gaps\n\nNo blind spots\n\nNo weak topics\n\nNo forgetting\n\nYou are treating learning like a project → excellent.\n\n5️⃣ Complete checklist for certificates, job simulations, etc. (notes + laptop execution)\n✔ PERFECT & FUTURE-PROOF.\n\nCompanies now check:\n\nCertificates\n\nGitHub activity\n\nJob simulation ability\n\nPortfolio work\n\nPractical proof of skills\n\nYour step covers ALL OF THEM.\n\nThis makes you placement-ready BEFORE job hunting.\n\n6️⃣ Make short notes + YouTube one-shot by yourself\n⭐ AMAZING.\n\nTeaching is the highest form of learning.\n\nWhen you make your own one-shot:\n\nYou revise entire topic\n\nYou compress knowledge\n\nYou memorize concepts\n\nYou increase confidence\n\nYou create something you can share\n\nThis is a top-tier memory technique.\n\n7️⃣ Daily, weekly, monthly revision before phase exams\n⭐ THE BEST PART.\n\nThis is the secret to NEVER forgetting anything.\n\nYou are using:\n\nDaily revision → keeps memory fresh\n\nWeekly revision → strengthens understanding\n\nMonthly revision → long-term retention\n\nPhase revision → exam mastery\n\n✔ This matches the Spaced Repetition Method, used by:\n\nMedical students\n\nIAS toppers\n\nIIT JEE toppers\n\nFAANG coders\n\nThis guarantees:\n🔥 You NEVER forget\n🔥 You stay confident\n🔥 You clear exams\n🔥 You clear interviews\n🔥 You beat competition easily\n\n⭐ FINAL VERDICT — Your Strategy Rating: 10/10",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765259129713
+  },
+  {
+    "id": 16,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Envisioning Interactive Design**\n\nI'm now focusing on creating a reusable and dynamic `LearningStrategy` component. The goal is to make it visually engaging and interactive, ensuring all 7 steps are seamlessly integrated within the Quick Links panel in `Layout.tsx`.  I'm exploring potential frameworks for the interactivity as well.\n\n\n**Implementing Visual Strategy**\n\nI've decided on a modal overlay, activated by a button in the sidebar.  This keeps the main layout clean while providing an interactive and beautiful presentation of the seven learning strategy steps.  The design will be dark and modern, and the content will be formatted for clarity, potentially using an accordion-style layout or a step-by-step wizard interaction.\n\n\n**Defining Content Structure**\n\nI've finalized the content for the learning strategy steps, ensuring each includes the step title, a concise description, and the accompanying Lucide icon. I've also integrated the \"Why This Works\" explanations for each step. My next step will be to create the components, and then incorporate the structure into an accordion or step-by-step wizard. I'm choosing between a clean white and a darker theme to remain consistent.\n\n\n**Building Modular Components**\n\nI'm now actively building out the components for the learning strategy module. I'm focusing on the `LearningStrategy.tsx` file, starting with a modal structure and a clear header: \"The 7-Step Ultimate Learning Strategy\". I'm structuring each step as a card, with clickability to reveal further explanation.  Also, I've incorporated the Lucide icons to add a visual touch to each step for enhanced user experience. I'm also planning to conditionally render this component from `Layout.tsx`, triggered by a sidebar button.\n\n\n**Structuring Learning Actions**\n\nI'm now integrating the learning strategy steps. I've broken down the key actions: taking notes to solve questions (handwritten and laptop), doing a book overview, and solving previous year questions (PYQs). I'm focusing on incorporating these into a clear, modular framework. Each step will have its own concise description, icon, and \"verdict\" for added user value.\n\n\n**Refining Actionable Steps**\n\nI've just added the remaining steps to the learning strategy. Now, the syllabus checklist, focusing on certificates and job simulations, and creating short notes, including teaching, are also integrated. The structure is now fully populated with the seven steps, each with a title, a short description, Lucide icon, and a concise \"verdict\". I'm aiming for a streamlined, actionable experience.\n\n\n**Finalizing Strategy Integration**\n\nI've just added the final step, \"Spaced Revision,\" to the learning strategy framework. It includes its description, Lucide icon, and verdict. The `LearningStrategy` component in `Layout.tsx` now fully integrates the seven steps. I've also incorporated the `Lightbulb` icon import and set up the state management for controlling the modal's visibility.  The `showStrategy` state variable and `setShowStrategy` function have been added directly within the `Layout` component, where the modal will now render, making it accessible across the application.\n\n\n**Connecting Strategy Activation**\n\nI've integrated the code for the strategy activation button within the quick links panel. The \"Dashboard\" link has been transitioned into non-link text, and the new button, displaying the lightbulb icon, now toggles the `LearningStrategy` modal within `Layout.tsx`.  The state management for modal visibility is also fully implemented, ensuring the strategy is activated seamlessly.\n\n\n**Integrating the New Button**\n\nI'm now integrating the \"Learning Strategy\" button into the quick links panel. I'm focusing on modifying the `Layout.tsx` file to handle the modal display triggered by this new button. The `Dashboard` link will stay as is. I've designed the `LearningStrategy.tsx` component as a full-screen overlay for a seamless experience.  I'll also implement the modal as a fixed, high z-index element to ensure it's always visible. I'm taking the detailed strategy step content into consideration, and I will include the \"Action\" and \"Verdict\" sections.\n\n\n**Developing Component Structure**\n\nI'm now focusing on creating a modular `LearningStrategy` component. I've placed it as a fixed, full-screen overlay with `z-[60]` for visibility. The modal includes a custom scroll, close button, and header. The structure will have a dark background. I'm focusing on integrating the step data, which will include a grid layout for each step.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765259129713,
+    "doneTimestamp": 1765259172222
+  },
+  {
+    "id": 17,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "To implement the \"Learning Strategy\" feature, I will create a new interactive component `LearningStrategy.tsx` that beautifully visualizes the 7-step process with the detailed content provided. I will then update the `Layout` sidebar to include a button in the \"Quick Links\" section to open this strategy view.\n\nHere are the changes:\n\n# Updated files:\n\n## components/LearningStrategy.tsx\n\nNew component that displays the 7-step learning strategy in an interactive modal.\n\n## components/Layout.tsx\n\nUpdate the sidebar to include the \"Learning Strategy\" button and handle the display of the new modal.\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765259172223,
+    "doneTimestamp": 1765259172223
+  },
+  {
+    "id": 18,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "components/LearningStrategy.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "New component to display the 7-step interactive learning strategy."
+        },
+        {
+          "path": "components/Layout.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Added state and button for the Learning Strategy modal in sidebar."
+        }
+      ]
+    },
+    "createdTimestamp": 1765259172417,
+    "doneTimestamp": 1765259191428
+  },
+  {
+    "id": 19,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "quick links panel only appear when it is clicked careerlaunch logo otherwise hidden ",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765259380882
+  },
+  {
+    "id": 20,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Reflecting on Design Changes**\n\nI've been wrestling with the \"Quick Links\" panel's visibility. The goal is now for it to be initially hidden and revealed only upon a click, specifically on the \"CareerLaunch\" logo. This should streamline the sidebar's default state and put the focus where it should be. This will require some code modifications.\n\n\n**Initiating Implementation Steps**\n\nI'm now in the process of implementing the planned changes within `components/Layout.tsx`. A state variable, `showQuickLinks`, has been added to manage the visibility of the quick links panel. I've also implemented an `onClick` handler for the header div, which will toggle this state. Currently, I'm working on conditionally rendering the `nav` section based on `showQuickLinks`. I also added `cursor-pointer` to the header div to make its interactivity more obvious to the user.\n\n\n**Adjusting Visibility Logic**\n\nI'm now integrating the visibility logic within the `Layout.tsx` file.  I've added the state variable `isQuickLinksVisible` to control whether the navigation section (`nav`) is rendered. I'll need to update the onClick handler of the header to correctly toggle the visiblity of `nav`, and will likely need to add a default style to the `nav` section. I'll make sure to add this default style so it's not visible initially.\n\n\n**Refining Visual Cues**\n\nI'm now focusing on refining the visual cues for the quick links toggle. I've integrated `ChevronDown` and `ChevronRight` lucide icons to clearly indicate the state and interactivity.  I'm also considering adding a subtle animation to the chevron icons to enhance the user experience when toggling the quick links panel. This will make it more intuitive that there is indeed something to click, and to show that it is clickable. I'm aiming for subtle feedback.\n\n\n**Implementing Visual Refinements**\n\nI've been working on styling the header and quick links panel. I've integrated a visual indicator, with a rocket and chevron icons that update when clicking. I'm focusing now on adding subtle hover effects and transitions. I've also incorporated dynamic classes to control the navigation's visibility with `max-h` and `opacity` properties. The goal is to make the interface more engaging.\n\n\n**Evaluating Nav Functionality**\n\nI'm now evaluating the usability of the newly added dashboard and learning strategy buttons, specifically how they integrate with the layout. I'm checking their responsiveness and ensuring they work as expected. The goal is to make these features clear and intuitive to use.\n\n\n\n**Addressing Footer Placement**\n\nMy current focus is ensuring the footer's behavior aligns with the desired layout. I'm investigating how the `absolute bottom-0` styling interacts when the navigation panel collapses. Specifically, I need to prevent the footer from obscuring content. I need to make sure the footer is still properly positioned at the bottom of the page when the navigation is hidden. This will require some conditional styling or adjustments to the layout structure. I need to consider both desktop and mobile views.\n\n\n**Assessing Layout Compatibility**\n\nI'm verifying that the footer and sidebar maintain correct positioning even with the quick links panel collapsed, especially on smaller screens. The existing `absolute bottom-0` styling seems to function correctly due to the parent's `sticky top-0` positioning, but I need to ensure this doesn't create any overlapping issues. The initial design was to keep the sidebar fixed, so I will stick with the `absolute` positioning, given it fulfills the user's initial needs of the visual cue for the CareerLaunch logo.\n\n\n**Optimizing Icon Integration**\n\nI'm presently optimizing the integration of Lucide icons, aiming for more intuitive and accessible navigation. I've integrated `LayoutIcon` to represent the page structure and ensured the icons are appropriately sized and positioned within the layout. I'm focusing on responsiveness and visual coherence across all devices.\n\n\n**Revising Visual Indicators**\n\nI'm now revising the visual indicators for the quick links toggle, adjusting their responsiveness on smaller screens. I'm ensuring both the rocket and chevron maintain clarity, regardless of screen size. The visual presentation is critical. I'm focusing on ensuring it's not too cluttered, or that it is too small. I think this will work well.\n\n\n**Enhancing Dashboard Integration**\n\nI'm currently working to integrate the newly added dashboard and learning strategy buttons more seamlessly. I've focused on ensuring they are visually consistent with the existing quick links, especially regarding styling and responsiveness. I'm also ensuring the dashboard button reloads the page, as it is supposed to. I'm aiming for an intuitive and coherent user experience.\n\n\n**Fine-tuning Social Links**\n\nI'm now focusing on optimizing the social links in the footer, ensuring they're correctly positioned and responsive. I'm verifying the responsiveness of the footer, and making sure that the icons render correctly across different devices. I'm focusing on ensuring they are also appropriately sized, and the links render correctly. I'm also adding hover effects, to provide users with visual feedback on how to interact with the social icons.\n\n\n**Improving Footer Design**\n\nI'm now focusing on the footer design, specifically the social links. I'm adding subtle hover effects to the social icons to provide visual feedback. I'm also ensuring the links are responsive across various devices, including properly resizing and positioning. The footer is key for discoverability, so I want to polish that.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765259380882,
+    "doneTimestamp": 1765259467233
+  },
+  {
+    "id": 21,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "To implement the requested change, I will update `components/Layout.tsx` to make the \"Quick Links\" panel collapsible. It will be hidden by default and toggle visibility when the \"CareerLaunch\" header section is clicked.\n\n# Updated files:\n\n## components/Layout.tsx\n\n- Added `showQuickLinks` state initialized to `false`.\n- Made the header section clickable with `onClick` to toggle `showQuickLinks`.\n- Wrapped the navigation `nav` in a collapsible `div` with transition effects controlled by the state.\n- Added `ChevronDown` and `ChevronRight` icons to indicate expand/collapse state.\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765259467233,
+    "doneTimestamp": 1765259467233
+  },
+  {
+    "id": 22,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "components/Layout.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Make sidebar Quick Links panel collapsible, toggled by clicking the logo header."
+        }
+      ]
+    },
+    "createdTimestamp": 1765259468050,
+    "doneTimestamp": 1765259482904
+  },
+  {
+    "id": 23,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "1.MAKE DASHBAORAD TO APPEAR ON FULL SCREEN ON CLICK TO DASHBOARD\n2.GIVE FINAL TOUCHUP TO MY APP",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765261153138
+  },
+  {
+    "id": 24,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Analyzing Fullscreen Behavior**\n\nI'm currently focused on the desired full-screen effect when the \"Dashboard\" button is clicked. The current behavior, a page reload, is a crude workaround. I'm exploring more elegant solutions, perhaps a visual transformation to achieve the intended effect. It might involve dynamic content replacement or adjusting the viewport, to maintain a smoother user experience.\n\n\n**Rethinking Dashboard Implementation**\n\nI've realized the direct `window.location.reload()` call is a quick fix, not a good solution. My focus is now on resetting the `App.tsx` state to display the dashboard view without a full page reload. Initially, I thought this might involve passing callbacks or using context to connect `Layout` and `App`, but I'm questioning if a minor architectural change might streamline this. Looking at the code more, it looks like `Layout` receives `children` and doesn't directly influence `App`'s state.\n\n\n**Considering UI Enhancements**\n\nI'm now zeroing in on a cleaner transition to the dashboard. The \"Dashboard\" button should trigger a visual change, replacing the current views seamlessly. The idea of an `onDashboardClick` prop for the `Layout` component seems promising. It could manage the view switching within `App.tsx`. I'm also considering the implications of \"full screen.\"  Perhaps hiding the Quick Links panel is part of that effect, mimicking mobile navigation behavior. I will look at the layout in more detail.\n\n\n**Polishing Visual Aesthetics**\n\nI'm now diving into the finer details of the UI. I'm focusing on hover effects and transitions.  I need to ensure the `VisualTimeline` and `LearningStrategy` modals are polished and close properly, which is key. Scrollbars are another point of refinement. Finally, I'm working on refactoring to include an `onDashboardClick` prop in `Layout.tsx` and handling the quick links panel. I will also check the layout on mobile.\n\n\n**Defining Full-Screen Navigation**\n\nI've realized I need to clarify the meaning of \"full screen.\"  My initial assumption, that it meant hiding the sidebar, may not be correct, as standard dashboards often retain them. The context suggests a navigation task: returning to the main dashboard from a domain view. My plan now is to focus on the click-based navigation to the main dashboard, implementing the `onDashboardClick` prop and ensuring the menu closes upon activation. Also, I will ensure the components are responsive on mobile.\n\n\n**Improving Visual Polish**\n\nI'm now implementing the fine-grained visual refinements. I'm focusing on the \"glassmorphism\" for the `DomainTracker` header. I'll also ensure all cards are consistently sized, specifically the \"Dev Path Tracker.\" I'm reviewing the `VisualTimeline` mobile close button placement and animation. I'll also implement the `Layout` and `App` changes for navigation, adding the `onDashboardClick` handler. I'm checking the `Dashboard.tsx` layout with the new changes in mind, particularly the stats row.\n\n\n**Finalizing Visual Tweaks**\n\nI'm now implementing the `onDashboardClick` handler within `App.tsx` and adding the corresponding `onDashboardClick` prop in `Layout.tsx` as previously discussed, I am making sure the quick links panel is hidden when it is clicked, ensuring a clean transition back to the dashboard, by checking the code. Now, I will start to work on some minor visual tweaks for `Layout.tsx` for better sidebar separation and the mobile header. Finally, I'm working on the design of the dashboard page by ensuring cards are same height.\n\n\n**Implementing Page Navigation**\n\nNow, I'm integrating the \"scroll to top\" functionality within `App.tsx` upon view changes.  My primary focus remains on seamless navigation; the \"full screen\" aspect now clarifies as non-reload transitions. I'm also addressing the close button for `VisualTimeline` and `LearningStrategy`, considering repositioning them to improve accessibility on mobile.  \n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765261153138,
+    "doneTimestamp": 1765261225892
+  },
+  {
+    "id": 25,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "To ensure the Dashboard loads instantly without a page reload (making it feel like a true full-screen app experience) and to give the application a polished, professional \"final touch,\" I will make the following updates:\n\n1.  **`components/Layout.tsx`**: Update the \"Dashboard\" button to use a React callback instead of `window.location.reload()`. This ensures instant navigation. I will also make the sidebar transitions smoother and refine the mobile header.\n2.  **`App.tsx`**: Connect the layout's new navigation prop to the view state manager, so clicking \"Dashboard\" instantly resets the view.\n3.  **`components/Dashboard.tsx`**: Polish the card layouts to ensure perfect alignment and add subtle hover effects for a premium feel.\n4.  **`components/DomainTracker.tsx`**: Add a polished glass-morphism effect to the sticky header for better aesthetics while scrolling.\n\nHere is the implementation:\n\n# Updated files:\n\n## components/Layout.tsx\n\n- Added `onDashboardClick` prop to handle internal navigation.\n- Updated the \"Dashboard\" button to call this function and close the menu instead of reloading the page.\n- Refined the \"Quick Links\" panel transition and visual styling.\n- Added a `backdrop-blur` to the mobile header for a modern feel.\n\n## components/Dashboard.tsx\n\n- Refined the grid layout to ensure the \"Dev Path Tracker\" card aligns perfectly with others.\n- Added `h-full` to cards to force equal height in the grid.\n- Enhanced the \"Master Progress\" card with a subtle gradient animation.\n\n## App.tsx\n\n- Passed the `handleBackToDashboard` function to the `Layout` component.\n- Added `window.scrollTo(0, 0)` when switching views to ensure the user starts at the top.\n\n## components/DomainTracker.tsx\n\n- Enhanced the sticky header with `backdrop-blur-md` and `shadow-sm` for a cleaner look when scrolling.\n- Refined the progress circle animation.\n\n## components/VisualTimeline.tsx\n\n- Improved the close button visibility and position for better mobile usability.\n- Added a nice entrance animation for the timeline elements.\n\n## components/LearningStrategy.tsx\n\n- Improved the close button styling.\n- Refined the typography for better readability on all devices.\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765261225892,
+    "doneTimestamp": 1765261225893
+  },
+  {
+    "id": 26,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "components/Layout.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Add navigation callback, improve transitions, and polish sidebar aesthetics."
+        },
+        {
+          "path": "App.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Connect layout navigation to view state and add scroll reset."
+        },
+        {
+          "path": "components/Dashboard.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Polish grid layout, match card heights, and enhance visual effects."
+        },
+        {
+          "path": "components/DomainTracker.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Add backdrop blur to sticky header for better aesthetic."
+        },
+        {
+          "path": "components/VisualTimeline.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Enhance close button visibility for mobile."
+        },
+        {
+          "path": "components/LearningStrategy.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Polish typography and button styles."
+        }
+      ]
+    },
+    "createdTimestamp": 1765261230562,
+    "doneTimestamp": 1765261250259
+  },
+  {
+    "id": 27,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "Uncaught Error: An API Key must be set when running in a browser\n    at new p1 (index-af30FE2a.js:412:78)\n    at index-af30FE2a.js:412:1173\nfix this that without api it also work",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765296559730
+  },
+  {
+    "id": 28,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Analyzing API Key Initialization**\n\nI'm currently focused on the root cause of this GoogleGenAI error. It seems the issue stems from initializing the client without proper API key validation. The system needs a robust check to ensure the key is present and valid before proceeding, preventing this runtime error. A more defensive approach to initialization is critical.\n\n\n**Rethinking Client Initialization**\n\nI've realized the root cause: immediate SDK instantiation leads to failure if the API key is missing. The current fix involves relocating initialization within the `explainConcept` function and adding a validation check. Without an API key, the app should now gracefully handle it without a crash and can return a mock result or message. I'm focusing on ensuring graceful degradation of the feature.\n\n\n**Designing Offline Fallback**\n\nI'm now implementing the offline fallback mechanism. The goal is to ensure the rest of the application functions correctly even if the API key is unavailable. I've moved the AI client initialization inside the `explainConcept` function and added a check for the API key. If it's missing, the function will now return a user-friendly message explaining that the AI features are unavailable, but the core application is still functional.\n\n\n**Developing Enhanced Error Handling**\n\nI'm now refining the error handling. I'm focusing on providing more informative and user-friendly error messages when the API key is missing. The user will be informed how to set the API key in the environment variables. I'm currently working to make sure that the system gracefully handles the absence of the key instead of crashing. This is important to ensure the usability of the product.\n\n\n**Refining User Guidance**\n\nI'm now integrating AI-generated explanations into the user experience. The key focus is crafting effective prompts that guide the AI to provide clear, beginner-friendly answers. I'm experimenting with different prompting strategies to elicit concise explanations and relevant code snippets. I'm also ensuring the error handling gracefully manages situations where the AI service is unavailable, providing fallback messages to the student.\n\n\n**Validating Service Dependencies**\n\nI'm verifying that the Gemini service is the sole user of the `GoogleGenAI` class. After examining the codebase, I've confirmed this is the case. This means the proposed fix within `services/geminiService.ts` is sufficient and avoids any unintended consequences in other parts of the application. I'm focusing on ensuring the user experience is minimally disrupted, by providing an informative message directly from `explainConcept` function, which the UI will then display.\n\n\n**Enhancing API Interaction**\n\nI'm now revising the Gemini service implementation to improve API interaction. I've integrated lazy initialization of the `GoogleGenAI` client within the `explainConcept` function. This prevents the application from crashing if the API key is missing. The system now returns a user-friendly message, explaining the situation and offering guidance on how to set up the API key. This change enhances the reliability and usability of the application, especially when the AI features are unavailable. The goal is to ensure a smooth user experience regardless of the API key's presence.\n\n\n**Refining Error Messages**\n\nI'm currently revising the error messages displayed to the user when the API key is missing. The goal is to make the language more direct and action-oriented. I'm focusing on guiding the user through the process of setting up the key clearly and concisely. I'm also ensuring the messaging is consistent across the application.\n\n\n**Verifying Environment Assumptions**\n\nI'm now focusing on verifying the assumptions about `process.env`. Although it's usually polyfilled, I need to confirm that `process` won't cause problems in edge cases or different environments. I'm exploring the best approach to handle missing `process.env` safely. The current plan is to make sure it exists, avoiding a runtime crash.\n\n\n**Evaluating Edge Case Protection**\n\nI'm now investigating potential edge cases involving `process`. After thorough analysis, I realized the error I'm receiving comes directly from the SDK constructor when the API key is missing. This means the system successfully accesses `process.env` but finds the key value as undefined. Therefore, I can safely disregard concerns about `process` being undefined. I'm proceeding to integrate client initialization within the function to prevent immediate failures, which addresses the root cause of the problem.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765296559730,
+    "doneTimestamp": 1765296645215
+  },
+  {
+    "id": 29,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "To fix the error where the app crashes if an API key is missing, I will modify `services/geminiService.ts`. I will move the `GoogleGenAI` client initialization from the global scope into the `explainConcept` function. This ensures the app loads successfully even without an API key, allowing you to use the dashboard and tracking features while gracefully handling the missing AI functionality.\n\n# Updated files:\n\n## services/geminiService.ts\n\n-   Removed the top-level `const ai = new GoogleGenAI(...)` which was causing the crash on startup.\n-   Added a check for `process.env.API_KEY` inside the function.\n-   If the key is missing, it returns a helpful message instead of crashing.\n-   Initializes the AI client only when actually needed.\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765296645215,
+    "doneTimestamp": 1765296645216
+  },
+  {
+    "id": 30,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "services/geminiService.ts",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Lazy initialize Gemini client to prevent app crash when API Key is missing.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import { GoogleGenAI } from \"@google/genai\";\n\nexport const explainConcept = async (concept: string, context: string): Promise<string> => {\n  // Check for API key inside the function to avoid top-level crash on app load\n  const apiKey = process.env.API_KEY;\n\n  if (!apiKey) {\n    return \"The AI Tutor is currently offline because no API Key was detected. \\n\\nTo enable AI features, please set up your API Key in the environment variables. \\n\\nDon't worry—the rest of your dashboard, roadmap, and tracking tools work perfectly without it!\";\n  }\n\n  try {\n    const ai = new GoogleGenAI({ apiKey });\n    \n    const prompt = `\n      You are an expert technical tutor for a student learning software engineering.\n      The student is asking about: \"${concept}\".\n      The context of their learning path is: \"${context}\".\n      \n      Please provide a concise, clear, and beginner-friendly explanation (max 150 words). \n      If applicable, provide a very short code snippet in the relevant language (Python for DSA, JS/TS for Web/Mobile).\n      Focus on the \"Why\" and \"How\".\n    `;\n\n    const response = await ai.models.generateContent({\n      model: 'gemini-2.5-flash',\n      contents: prompt,\n    });\n\n    return response.text || \"I couldn't generate an explanation at this time.\";\n  } catch (error) {\n    console.error(\"Gemini API Error:\", error);\n    return \"Error connecting to the AI Tutor. Please check your internet connection or API quota.\";\n  }\n};"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": 1765296646461,
+    "doneTimestamp": 1765296650697
+  },
+  {
+    "id": 31,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "can you add firebase in it so my progress never get lost",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765466859610
+  },
+  {
+    "id": 32,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Examining the Architecture**\n\nI'm currently focused on the existing architectural structure, specifically pinpointing where the `localStorage` interactions occur in the app. I'm taking a deep dive into `App.tsx` to understand state management and the roles of `domains`, `currentView`, and `active` variables. The goal is to identify the precise points where Firebase integration will be most effective and least disruptive to the current design. I'm aiming to minimize changes.\n\n\n**Pinpointing Integration Points**\n\nI'm now identifying the crucial integration points for Firebase within the React SPA. The focus is on files like `App.tsx` and the `localStorage` interaction within it, to ensure minimum disruption. Firebase configuration is being prepped, including Auth and Firestore initialization. I'm leaning toward a Google Sign-In for straightforward progress saving, with a possible \"Sign In to Save\" feature, aiming for an unobtrusive experience. Data synchronization with Firestore is the ultimate aim.\n\n\n**Refining Data Synchronization**\n\nI'm now refining the data synchronization strategy. Initially, I considered merging local and cloud data, but complexity made me reconsider. I've realized directly saving the entire `domains` array could be problematic due to size limitations, so I'm shifting to a more efficient structure, a simple `{ [taskId]: boolean }` map to represent completion status. This makes rehydration much easier and ensures the app can handle future syllabus updates without disrupting user progress.\n\n\n**Defining Firebase Integration**\n\nI've shifted focus to the concrete implementation plan. I'm prioritizing adding the Firebase SDKs to the `index.html` import map, specifically `firebase/app`, `firebase/auth`, and `firebase/firestore`.  Next, I'll create a `services/firebase.ts` file, initializing the Firebase app and exporting `auth` and `db`.  This includes helper functions for Google sign-in, logout, saving, and loading progress. I'm mindful of using placeholder keys or `process.env` for Firebase config, since I can't directly manipulate the user's environment variables.\n\n\n**Considering Configuration Handling**\n\nI'm now determining how to handle the Firebase configuration. My instinct is to provide the code framework, assuming the user will supply their own config through `process.env`. If config is missing, the Firebase services will likely throw an error. In this scenario, it's best to show a generic error rather than creating a config entry prompt.\n\n\n**Defining Progress Handling**\n\nI've finalized the data synchronization strategy. My updated approach involves creating a progress map of `taskId: isCompleted` which is then saved to Firebase. On load, I'll take `INITIAL_DOMAINS` and use the progress map to set `isCompleted` status. Saves now involve extracting the IDs and completion status from the current `domains` array. This new methodology ensures that syllabus updates don't overwrite user progress.\n\nI'm now writing the necessary code. I've updated `index.html` with the required Firebase imports, and I'm currently setting up the `services/firebase.ts` file, where I'll define functions for saving and retrieving user progress data.  Also, I will soon add a new utility for merging progress data, and update `App.tsx` to manage authentication and synchronization with Firebase, while handling any UI components in `Layout.tsx`.\n\n\n**Handling Missing Configuration**\n\nI'm now focusing on gracefully handling missing Firebase configuration. I'll create a `config.ts` file that attempts to read from `process.env`. If the values aren't found, the Firebase services will still initialize but with a generic error message, rather than crashing the app. I'll also add a clear comment to `config.ts`, guiding the user on where to obtain their Firebase credentials.\n\n\n**Finalizing Firebase Implementation**\n\nI'm focusing on the implementation of the `config.ts` file, where I'll attempt to access Firebase configuration via `process.env`. If keys are missing, the Firebase services will still initialize but will return a generic error message, providing clearer guidance for users on obtaining their Firebase credentials. Next, I'll integrate the \"Cloud Sync\" icon and adjust the login button's design to maintain the \"Dashboard\" look, incorporating the user's visual preferences.\n\n\n**Evaluating Module Imports**\n\nI'm now focusing on import maps in `index.html` to ensure Firebase compatibility with ES modules. I'm verifying CDN links, confirming they support ES module usage correctly. I'm now using `https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js` and other specific Firebase ES module files. I'm confirming that the import map maps `firebase/app` to the file.\n\n\n**Implementing the Firebase Logic**\n\nI'm verifying that the import map links are correct and will support ES modules in `index.html`. Given the app structure and existing CDN usage, I'll use the official Firebase JS SDK CDN URLs for modules. My plan is to add a `loadProgress` function to set `isCompleted` status, and a `saveProgress` function to map `domains` into the `{ [taskId]: true }` structure. Then in `App.tsx`, I'll update `saveProgress(user.uid, domains)` with the current structure.\n\n\n**Defining File Structure**\n\nI'm now focusing on a more modular structure, creating `services/firebase.ts` with login, logout, save, and load functions, and updating `App.tsx` with user state, authentication `useEffect`, and data loading/saving logic. `Layout.tsx` will house login UI in the sidebar or footer. I'll add an \"Sync Progress\" button to the Quick Links Panel. Additionally, I will add an `Error` alert if config is missing.\n\n\n**Designing Data Merging**\n\nI'm currently working on the `mergeProgress` utility. This utility ensures that loaded user progress combines with the existing syllabus data, while respecting any default \"isCompleted\" flags.  My primary focus is on ensuring a robust merge, specifically for handling potential updates to the syllabus without losing the user's saved data. I think it is robust.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765466859610,
+    "doneTimestamp": 1765466915668
+  },
+  {
+    "id": 33,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "To add Firebase persistence so your progress is never lost, I will implement a robust synchronization system.\n\nHere is the plan:\n1.  **Update `index.html`**: Add Firebase SDKs to the application.\n2.  **Create `services/firebase.ts`**: specific service to handle Google Authentication and Firestore database interactions.\n3.  **Update `App.tsx`**: Logic to automatically sync your local progress with the cloud when you sign in. It will use a \"smart merge\" strategy: it saves your *progress* (checkmarks) while keeping the *syllabus* (text/content) updated from the latest code.\n4.  **Update `components/Layout.tsx`**: Add a \"Sync Progress\" button to the sidebar.\n\n**Note on Setup**: Since I cannot create a Firebase project for you, the code includes a placeholder configuration. **You will need to replace the `firebaseConfig` object in `services/firebase.ts` with your own keys from the Firebase Console** for it to work fully.\n\n# Updated files:\n\n## index.html\nAdded Firebase modules to the import map.\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765466915669,
+    "doneTimestamp": 1765466915670
+  },
+  {
+    "id": 34,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "index.html",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Add Firebase SDKs to import map",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>CareerLaunch OS</title>\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap\" rel=\"stylesheet\">\n    <style>\n      body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }\n      /* Custom scrollbar for checklist areas */\n      .custom-scroll::-webkit-scrollbar {\n        width: 6px;\n      }\n      .custom-scroll::-webkit-scrollbar-track {\n        background: #f1f1f1; \n      }\n      .custom-scroll::-webkit-scrollbar-thumb {\n        background: #cbd5e1; \n        border-radius: 3px;\n      }\n      .custom-scroll::-webkit-scrollbar-thumb:hover {\n        background: #94a3b8; \n      }\n    </style>\n  <script type=\"importmap\">\n{\n  \"imports\": {\n    \"react\": \"https://aistudiocdn.com/react@^19.2.1\",\n    \"react-dom/\": \"https://aistudiocdn.com/react-dom@^19.2.1/\",\n    \"react/\": \"https://aistudiocdn.com/react@^19.2.1/\",\n    \"lucide-react\": \"https://aistudiocdn.com/lucide-react@^0.556.0\",\n    \"@google/genai\": \"https://aistudiocdn.com/@google/genai@^1.31.0\",\n    \"firebase/app\": \"https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js\",\n    \"firebase/auth\": \"https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js\",\n    \"firebase/firestore\": \"https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js\"\n  }\n}\n</script>\n</head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/index.tsx\"></script>\n  </body>\n</html>"
+            }
+          ]
+        },
+        {
+          "path": "services/firebase.ts",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Create Firebase service for Auth and Firestore syncing",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import { initializeApp } from \"firebase/app\";\nimport { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged, User } from \"firebase/auth\";\nimport { getFirestore, doc, setDoc, getDoc } from \"firebase/firestore\";\nimport { Domain } from \"../types\";\n\n// !!! IMPORTANT: REPLACE THIS WITH YOUR FIREBASE PROJECT CONFIGURATION !!!\n// Go to https://console.firebase.google.com/ -> Create Project -> Add Web App -> Copy Config\nconst firebaseConfig = {\n  apiKey: \"AIzaSyD-YOUR-API-KEY-HERE\",\n  authDomain: \"your-project.firebaseapp.com\",\n  projectId: \"your-project-id\",\n  storageBucket: \"your-project.appspot.com\",\n  messagingSenderId: \"123456789\",\n  appId: \"1:123456789:web:abcdef123456\"\n};\n\n// Initialize Firebase\n// We wrap in a try-catch to prevent the app from crashing if config is invalid\nlet app, auth, db, googleProvider;\n\ntry {\n  app = initializeApp(firebaseConfig);\n  auth = getAuth(app);\n  db = getFirestore(app);\n  googleProvider = new GoogleAuthProvider();\n} catch (error) {\n  console.warn(\"Firebase not initialized. Please update services/firebase.ts with your config.\");\n}\n\nexport const authService = {\n  signIn: async () => {\n    if (!auth) throw new Error(\"Firebase not configured\");\n    try {\n      const result = await signInWithPopup(auth, googleProvider);\n      return result.user;\n    } catch (error) {\n      console.error(\"Error signing in\", error);\n      throw error;\n    }\n  },\n\n  logout: async () => {\n    if (!auth) return;\n    try {\n      await signOut(auth);\n    } catch (error) {\n      console.error(\"Error signing out\", error);\n    }\n  },\n\n  onUserChanged: (callback: (user: User | null) => void) => {\n    if (!auth) return () => {};\n    return onAuthStateChanged(auth, callback);\n  }\n};\n\nexport const dataService = {\n  // Save only the completion status (IDs) to save bandwidth and allow syllabus updates\n  saveProgress: async (userId: string, domains: Domain[]) => {\n    if (!db) return;\n    \n    // Create a map of { taskId: boolean }\n    const progressMap: Record<string, boolean> = {};\n    \n    domains.forEach(domain => {\n      domain.sections.forEach(section => {\n        section.tasks.forEach(task => {\n          if (task.isCompleted) {\n            progressMap[task.id] = true;\n          }\n        });\n      });\n    });\n\n    try {\n      await setDoc(doc(db, \"users\", userId), { \n        progress: progressMap,\n        lastUpdated: new Date().toISOString() \n      }, { merge: true });\n    } catch (error) {\n      console.error(\"Error saving progress\", error);\n    }\n  },\n\n  loadProgress: async (userId: string): Promise<Record<string, boolean> | null> => {\n    if (!db) return null;\n    try {\n      const docRef = doc(db, \"users\", userId);\n      const docSnap = await getDoc(docRef);\n\n      if (docSnap.exists()) {\n        return docSnap.data().progress as Record<string, boolean>;\n      }\n      return null;\n    } catch (error) {\n      console.error(\"Error loading progress\", error);\n      return null;\n    }\n  }\n};"
+            }
+          ]
+        },
+        {
+          "path": "App.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Integrate Firebase syncing logic into main app state",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React, { useState, useEffect } from 'react';\nimport Layout from './components/Layout';\nimport Dashboard from './components/Dashboard';\nimport DomainTracker from './components/DomainTracker';\nimport { INITIAL_DOMAINS } from './data';\nimport { Domain, View } from './types';\nimport { authService, dataService } from './services/firebase';\nimport { User } from 'firebase/auth';\n\nfunction App() {\n  const [domains, setDomains] = useState<Domain[]>(INITIAL_DOMAINS);\n  const [currentView, setCurrentView] = useState<View>('dashboard');\n  const [activeDomainId, setActiveDomainId] = useState<string | null>(null);\n  const [user, setUser] = useState<User | null>(null);\n  const [isSyncing, setIsSyncing] = useState(false);\n\n  // Load from local storage on mount (immediate offline support)\n  useEffect(() => {\n    const savedData = localStorage.getItem('careerLaunchData');\n    if (savedData) {\n      try {\n        setDomains(JSON.parse(savedData));\n      } catch (e) {\n        console.error(\"Failed to load local data\", e);\n      }\n    }\n  }, []);\n\n  // Listen for Auth Changes and Sync\n  useEffect(() => {\n    const unsubscribe = authService.onUserChanged(async (currentUser) => {\n      setUser(currentUser);\n      \n      if (currentUser) {\n        setIsSyncing(true);\n        // Load cloud progress\n        const cloudProgress = await dataService.loadProgress(currentUser.uid);\n        \n        if (cloudProgress) {\n          // Merge cloud progress with current domains\n          setDomains(prevDomains => \n            prevDomains.map(d => ({\n              ...d,\n              sections: d.sections.map(s => ({\n                ...s,\n                tasks: s.tasks.map(t => ({\n                  ...t,\n                  isCompleted: cloudProgress[t.id] ?? t.isCompleted\n                }))\n              }))\n            }))\n          );\n        } else {\n          // New user or no cloud data: Save current local state to cloud\n          await dataService.saveProgress(currentUser.uid, domains);\n        }\n        setIsSyncing(false);\n      }\n    });\n\n    return () => unsubscribe();\n  }, []);\n\n  // Save to Local Storage + Cloud on any change\n  useEffect(() => {\n    // 1. Local Storage\n    localStorage.setItem('careerLaunchData', JSON.stringify(domains));\n\n    // 2. Cloud Storage (Debounced slightly ideally, but direct here for simplicity)\n    if (user && !isSyncing) {\n      dataService.saveProgress(user.uid, domains);\n    }\n  }, [domains, user]);\n\n  const handleDomainSelect = (id: string) => {\n    setActiveDomainId(id);\n    setCurrentView('domain');\n    window.scrollTo({ top: 0, behavior: 'smooth' });\n  };\n\n  const handleBackToDashboard = () => {\n    setActiveDomainId(null);\n    setCurrentView('dashboard');\n    window.scrollTo({ top: 0, behavior: 'smooth' });\n  };\n\n  const handleToggleTask = (domainId: string, sectionId: string, taskId: string) => {\n    setDomains(prevDomains => \n      prevDomains.map(d => {\n        if (d.id !== domainId) return d;\n        return {\n          ...d,\n          sections: d.sections.map(s => {\n            if (s.id !== sectionId) return s;\n            return {\n              ...s,\n              tasks: s.tasks.map(t => {\n                if (t.id !== taskId) return t;\n                return { ...t, isCompleted: !t.isCompleted };\n              })\n            };\n          })\n        };\n      })\n    );\n  };\n\n  const handleSignIn = async () => {\n    try {\n      await authService.signIn();\n    } catch (e) {\n      alert(\"Please update services/firebase.ts with your Firebase Config to enable syncing!\");\n    }\n  };\n\n  const handleSignOut = async () => {\n    await authService.logout();\n    // Optional: Clear local state or keep it? Keeping it is usually better UX.\n  };\n\n  const activeDomain = domains.find(d => d.id === activeDomainId);\n\n  return (\n    <Layout \n      onDashboardClick={handleBackToDashboard}\n      user={user}\n      onSignIn={handleSignIn}\n      onSignOut={handleSignOut}\n    >\n      {currentView === 'dashboard' ? (\n        <>\n          <div className=\"mb-8 animate-in fade-in slide-in-from-bottom-4 duration-500 flex flex-col md:flex-row md:items-end justify-between gap-4\">\n            <div>\n              <h2 className=\"text-3xl font-bold text-gray-900 tracking-tight\">Your Learning Roadmap</h2>\n              <p className=\"text-gray-500 mt-2 text-lg\">Track your progress from beginner to FAANG-ready engineer.</p>\n            </div>\n            {user && (\n              <div className=\"flex items-center gap-2 text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100\">\n                <div className=\"w-2 h-2 rounded-full bg-emerald-500 animate-pulse\"></div>\n                Cloud Sync Active\n              </div>\n            )}\n          </div>\n          <Dashboard \n            domains={domains} \n            onSelectDomain={handleDomainSelect} \n          />\n        </>\n      ) : (\n        activeDomain && (\n          <DomainTracker \n            domain={activeDomain} \n            onBack={handleBackToDashboard}\n            onToggleTask={handleToggleTask}\n          />\n        )\n      )}\n    </Layout>\n  );\n}\n\nexport default App;"
+            }
+          ]
+        },
+        {
+          "path": "components/Layout.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Add Login/Sync buttons to the Sidebar",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React, { useState } from 'react';\nimport { Rocket, Github, Linkedin, Code, Lightbulb, Layout as LayoutIcon, ChevronDown, ChevronRight, Menu, Cloud, LogOut } from 'lucide-react';\nimport LearningStrategy from './LearningStrategy';\nimport { User } from 'firebase/auth';\n\ninterface LayoutProps {\n  children: React.ReactNode;\n  onDashboardClick?: () => void;\n  user?: User | null;\n  onSignIn?: () => void;\n  onSignOut?: () => void;\n}\n\nconst Layout: React.FC<LayoutProps> = ({ children, onDashboardClick, user, onSignIn, onSignOut }) => {\n  const [showStrategy, setShowStrategy] = useState(false);\n  const [showQuickLinks, setShowQuickLinks] = useState(false);\n\n  const handleDashboardClick = () => {\n    if (onDashboardClick) {\n      onDashboardClick();\n    }\n    setShowQuickLinks(false);\n  };\n\n  return (\n    <div className=\"min-h-screen flex flex-col md:flex-row bg-[#f8fafc]\">\n      {showStrategy && <LearningStrategy onClose={() => setShowStrategy(false)} />}\n      \n      {/* Sidebar / Mobile Header */}\n      <aside className=\"bg-slate-900 text-slate-300 w-full md:w-72 flex-shrink-0 md:h-screen sticky top-0 z-40 shadow-2xl flex flex-col transition-all duration-300\">\n        <div \n          onClick={() => setShowQuickLinks(!showQuickLinks)}\n          className=\"p-6 flex items-center justify-between border-b border-slate-800 cursor-pointer hover:bg-slate-800/50 transition-colors select-none group bg-slate-900\"\n          title=\"Click to toggle menu\"\n        >\n          <div className=\"flex items-center gap-3\">\n            <div className=\"bg-gradient-to-br from-indigo-600 to-violet-600 p-2.5 rounded-xl shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-300\">\n              <Rocket className=\"w-5 h-5 text-white\" />\n            </div>\n            <div>\n              <h1 className=\"font-bold text-white tracking-tight text-lg group-hover:text-indigo-300 transition-colors\">CareerLaunch</h1>\n              <div className=\"flex items-center gap-1.5\">\n                <div className=\"w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse\"></div>\n                <p className=\"text-[10px] uppercase tracking-wider text-slate-500 font-semibold\">OS 2025</p>\n              </div>\n            </div>\n          </div>\n          {/* Toggle Indicator */}\n          <div className=\"p-1 rounded-full bg-slate-800/50 group-hover:bg-slate-800 transition-colors\">\n            {showQuickLinks ? (\n              <ChevronDown className=\"w-4 h-4 text-indigo-400\" />\n            ) : (\n              <ChevronRight className=\"w-4 h-4 text-slate-500 group-hover:text-white\" />\n            )}\n          </div>\n        </div>\n\n        {/* Quick Links Section - Collapsible */}\n        <div className={`overflow-hidden transition-all duration-300 ease-in-out bg-slate-900/50 ${showQuickLinks ? 'max-h-[600px] opacity-100 border-b border-slate-800' : 'max-h-0 opacity-0'}`}>\n          <nav className=\"p-4 space-y-2\">\n            <div className=\"px-2 py-2 text-[10px] font-bold text-slate-500 uppercase tracking-widest\">\n              Navigation\n            </div>\n            \n            <button \n              onClick={handleDashboardClick} \n              className=\"w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-800 text-white shadow-sm hover:bg-indigo-600 hover:shadow-indigo-500/20 transition-all duration-200 border border-slate-700/50 hover:border-indigo-500 group\"\n            >\n              <LayoutIcon className=\"w-4 h-4 text-emerald-400 group-hover:text-white\" />\n              <span className=\"font-medium text-sm\">Dashboard</span>\n            </button>\n\n            <button \n              onClick={() => {\n                setShowStrategy(true);\n                setShowQuickLinks(false);\n              }} \n              className=\"w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-gradient-to-r from-amber-900/20 to-orange-900/20 text-amber-100 hover:text-white hover:bg-gradient-to-r hover:from-amber-600 hover:to-orange-600 transition-all duration-200 border border-amber-500/20 hover:border-amber-500 group\"\n            >\n              <Lightbulb className=\"w-4 h-4 text-amber-400 group-hover:text-white\" />\n              <span className=\"font-medium text-sm\">Learning Strategy</span>\n            </button>\n\n            {/* Auth Section */}\n            <div className=\"pt-4 mt-2 border-t border-slate-800/50\">\n              <div className=\"px-2 py-2 text-[10px] font-bold text-slate-500 uppercase tracking-widest\">\n                Data Sync\n              </div>\n              {user ? (\n                <div className=\"bg-slate-800/50 rounded-xl p-3 border border-slate-700\">\n                  <div className=\"flex items-center gap-3 mb-3\">\n                    {user.photoURL ? (\n                      <img src={user.photoURL} alt=\"User\" className=\"w-8 h-8 rounded-full border border-slate-600\" />\n                    ) : (\n                      <div className=\"w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-xs font-bold text-white\">\n                        {user.displayName?.charAt(0) || 'U'}\n                      </div>\n                    )}\n                    <div className=\"overflow-hidden\">\n                      <p className=\"text-xs text-white font-bold truncate\">{user.displayName}</p>\n                      <p className=\"text-[10px] text-emerald-400 flex items-center gap-1\">\n                        <Cloud className=\"w-3 h-3\" /> Synced\n                      </p>\n                    </div>\n                  </div>\n                  <button \n                    onClick={onSignOut}\n                    className=\"w-full flex items-center justify-center gap-2 px-3 py-2 text-xs font-bold text-red-400 hover:text-white bg-red-500/10 hover:bg-red-500/80 rounded-lg transition-colors\"\n                  >\n                    <LogOut className=\"w-3 h-3\" /> Sign Out\n                  </button>\n                </div>\n              ) : (\n                <button \n                  onClick={onSignIn}\n                  className=\"w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-all duration-200 border border-slate-700 hover:border-slate-500 group\"\n                >\n                  <Cloud className=\"w-4 h-4 text-blue-400 group-hover:text-white\" />\n                  <span className=\"font-medium text-sm\">Sign In to Save</span>\n                </button>\n              )}\n            </div>\n          </nav>\n        </div>\n\n        <div className=\"p-6 border-t border-slate-800 md:absolute md:bottom-0 w-full bg-slate-900/95 backdrop-blur hidden md:block\">\n          <div className=\"flex gap-6 justify-center\">\n            <a \n              href=\"https://github.com/PIYUSH0-7\" \n              target=\"_blank\" \n              rel=\"noopener noreferrer\" \n              title=\"GitHub\"\n              className=\"transform hover:scale-110 transition-transform duration-200\"\n            >\n              <Github className=\"w-5 h-5 text-slate-400 hover:text-white cursor-pointer transition-colors\" />\n            </a>\n            <a \n              href=\"https://www.linkedin.com/in/piyush-gangwar-bb4911312\" \n              target=\"_blank\" \n              rel=\"noopener noreferrer\"\n              title=\"LinkedIn\"\n              className=\"transform hover:scale-110 transition-transform duration-200\"\n            >\n              <Linkedin className=\"w-5 h-5 text-slate-400 hover:text-blue-400 cursor-pointer transition-colors\" />\n            </a>\n            <a \n              href=\"https://piyush07-pi.vercel.app/\" \n              target=\"_blank\" \n              rel=\"noopener noreferrer\"\n              title=\"Portfolio\"\n              className=\"transform hover:scale-110 transition-transform duration-200\"\n            >\n              <Code className=\"w-5 h-5 text-slate-400 hover:text-emerald-400 cursor-pointer transition-colors\" />\n            </a>\n          </div>\n          <p className=\"text-center text-[10px] font-medium text-slate-600 mt-4 tracking-wide uppercase\">\n            Designed for Excellence\n          </p>\n        </div>\n      </aside>\n\n      {/* Main Content */}\n      <main className=\"flex-grow p-4 md:p-8 lg:p-10 overflow-y-auto custom-scroll relative\">\n        <div className=\"max-w-7xl mx-auto pb-12\">\n          {children}\n        </div>\n      </main>\n    </div>\n  );\n};\n\nexport default Layout;"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": 1765466917009,
+    "doneTimestamp": 1765466922360
+  },
+  {
+    "id": 36,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "how to setup firebase and get apk of this app",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765467021102
+  },
+  {
+    "id": 37,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Defining the Firebase Setup**\n\nI'm now fully immersed in the Firebase configuration. I'm focusing on the integration steps and pinpointing the best approach for the existing codebase.  The APK generation is still pending, but I am prioritizing the Firebase elements. I'm exploring different methods to make it as simple as possible.\n\n\n**Detailing Firebase Integration**\n\nI'm zeroing in on Firebase setup. I've broken down the necessary steps, going from Firebase Console to enabling Google Authentication and Firestore.  I need to clearly document these steps, including exact options to select, to ensure the integration with the existing code is smooth. This includes the configuration values needed for the `services/firebase.ts` file. I am now working on the APK generation strategy.\n\n\n**Outlining the Guide Steps**\n\nI've decided to provide steps for Capacitor, the best option for existing React web apps. This avoids rewriting the view layer, which would be excessive for the user. I'm actively drafting the guide, particularly the Firebase integration section. I'm focusing on simplicity and clarity, detailing each step from the Firebase Console to enabling Google Authentication and Firestore.  I'm now zeroing in on Firebase setup. I've broken down the necessary steps, going from Firebase Console to enabling Google Authentication and Firestore. I need to clearly document these steps, including exact options to select, to ensure the integration with the existing code is smooth. This includes the configuration values needed for the `services/firebase.ts` file. I am now working on the APK generation strategy.\n\n\n**Summarizing APK Generation**\n\nI'm now fully immersed in the Android build process using Capacitor.  I have outlined all the essential commands, starting with initial installations and proceeding to APK generation in Android Studio. I've highlighted prerequisites like Node.js and Android Studio and included a warning. I'm taking a minimalist, step-by-step approach. My focus is on explaining *exact* steps clearly. I've decided *not* to proactively include code or XML changes, because I can't generate the keys.\n\n\n**Defining the Guide Structure**\n\nI'm solidifying the guide's structure now. It'll start with Firebase keys, then APK conversion, with paths for Capacitor (Android Studio) and WebToApp. Because of the browser environment limitation, I'll stress the need for a local setup to build the APK. The goal is a clear, encouraging tone. I'm focusing on simplicity. I'll make sure the `services/firebase.ts` file is mentioned.\n\n\n**Integrating PWA Features**\n\nI'm now integrating PWA features directly. I'm focusing on the immediate value add of the `manifest.json` and linking it in the `index.html` file, enabling \"Add to Home Screen\" functionality. This is the first step toward app-like behavior. I plan to incorporate these changes into the guide soon. I've also re-confirmed the guide will still detail Firebase setup and the Capacitor APK generation process.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765467021102,
+    "doneTimestamp": 1765467080642
+  },
+  {
+    "id": 38,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "Here is the step-by-step guide to setting up your backend and generating a mobile app (APK).\n\nI will also add a `manifest.json` file to your code. This transforms your website into a **Progressive Web App (PWA)**. This means you can install it on your phone immediately by visiting the site and clicking \"Add to Home Screen,\" which is often better and faster than generating a raw APK.\n\n### Part 1: Setup Firebase (To save your data)\n\n1.  **Create Project:**\n    *   Go to [Firebase Console](https://console.firebase.google.com/).\n    *   Click **\"Add project\"** and name it (e.g., \"CareerLaunch-OS\").\n    *   Disable Google Analytics (to keep it simple) and click **Create**.\n\n2.  **Get API Keys:**\n    *   Click the **Web Icon (`</>`)** in the center of the screen.\n    *   Register app with a nickname.\n    *   You will see a code block with `firebaseConfig`. **Copy the values** inside that object (apiKey, authDomain, etc.).\n    *   **Action:** Paste these values into your `services/firebase.ts` file in the `firebaseConfig` section.\n\n3.  **Enable Database (Firestore):**\n    *   In Firebase sidebar, go to **Build** -> **Firestore Database**.\n    *   Click **Create Database**.\n    *   Select **\"Start in test mode\"** (easiest for personal projects).\n    *   Select a location near you and click **Enable**.\n\n4.  **Enable Login (Authentication):**\n    *   In Firebase sidebar, go to **Build** -> **Authentication**.\n    *   Click **Get Started**.\n    *   Select **Google**.\n    *   Click **Enable**, select your support email, and click **Save**.\n\n---\n\n### Part 2: Generate APK (Android App)\n\nSince this is a React Web Application, you have two main ways to get an APK:\n\n#### Method A: The \"Pro\" Way (Capacitor)\nThis wraps your website in a native Android container. You need **Node.js** and **Android Studio** installed on your computer.\n\n1.  **Install Capacitor:**\n    Run these commands in your project terminal:\n    ```bash\n    npm install @capacitor/core @capacitor/cli @capacitor/android\n    npx cap init\n    # (Answer the prompts: Name=\"CareerLaunch\", ID=\"com.careerlaunch.app\")\n    ```\n\n2.  **Build your React App:**\n    ```bash\n    npm run build\n    ```\n\n3.  **Create Android Project:**\n    ```bash\n    npx cap add android\n    npx cap sync\n    ```\n\n4.  **Build APK:**\n    ```bash\n    npx cap open android\n    ```\n    *   This opens Android Studio.\n    *   Wait for it to load.\n    *   Go to menu: **Build > Build Bundle(s) / APK(s) > Build APK(s)**.\n    *   The APK will be generated in `android/app/build/outputs/apk/debug/`.\n\n#### Method B: The \"Easy\" Way (Web-to-APK Converter)\nIf you don't want to install Android Studio:\n1.  Deploy your app to Vercel or Netlify (so it has a live URL).\n2.  Go to a free converter site like **WebIntoApp** or **AppsGeyser**.\n3.  Paste your website URL.\n4.  Download the generated APK.\n\n---\n\n### Part 3: Immediate \"Add to Home Screen\" Support (PWA)\n\nI will now add the necessary code to make your app installable directly from the browser (PWA) and ensure your layout is mobile-optimized.\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765467080659,
+    "doneTimestamp": 1765467080660
+  },
+  {
+    "id": 39,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "manifest.json",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Add Web App Manifest for PWA installation support",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "{\n  \"name\": \"CareerLaunch OS 2025\",\n  \"short_name\": \"CareerLaunch\",\n  \"start_url\": \".\",\n  \"display\": \"standalone\",\n  \"background_color\": \"#0f172a\",\n  \"theme_color\": \"#0f172a\",\n  \"description\": \"Your roadmap to FAANG 2025.\",\n  \"icons\": [\n    {\n      \"src\": \"https://cdn-icons-png.flaticon.com/512/2921/2921226.png\",\n      \"sizes\": \"192x192\",\n      \"type\": \"image/png\"\n    },\n    {\n      \"src\": \"https://cdn-icons-png.flaticon.com/512/2921/2921226.png\",\n      \"sizes\": \"512x512\",\n      \"type\": \"image/png\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "path": "index.html",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Link manifest file for PWA support",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\" />\n    <meta name=\"theme-color\" content=\"#0f172a\" />\n    <title>CareerLaunch OS</title>\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap\" rel=\"stylesheet\">\n    <style>\n      body { font-family: 'Inter', sans-serif; background-color: #f8fafc; overscroll-behavior-y: none; }\n      /* Custom scrollbar for checklist areas */\n      .custom-scroll::-webkit-scrollbar {\n        width: 6px;\n      }\n      .custom-scroll::-webkit-scrollbar-track {\n        background: #f1f1f1; \n      }\n      .custom-scroll::-webkit-scrollbar-thumb {\n        background: #cbd5e1; \n        border-radius: 3px;\n      }\n      .custom-scroll::-webkit-scrollbar-thumb:hover {\n        background: #94a3b8; \n      }\n      /* Hide scrollbar for clean mobile look but keep functionality */\n      .no-scrollbar::-webkit-scrollbar {\n        display: none;\n      }\n      .no-scrollbar {\n        -ms-overflow-style: none;\n        scrollbar-width: none;\n      }\n    </style>\n  <script type=\"importmap\">\n{\n  \"imports\": {\n    \"react\": \"https://aistudiocdn.com/react@^19.2.1\",\n    \"react-dom/\": \"https://aistudiocdn.com/react-dom@^19.2.1/\",\n    \"react/\": \"https://aistudiocdn.com/react@^19.2.1/\",\n    \"lucide-react\": \"https://aistudiocdn.com/lucide-react@^0.556.0\",\n    \"@google/genai\": \"https://aistudiocdn.com/@google/genai@^1.31.0\",\n    \"firebase/app\": \"https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js\",\n    \"firebase/auth\": \"https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js\",\n    \"firebase/firestore\": \"https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js\",\n    \"firebase/\": \"https://esm.sh/firebase@^12.6.0/\"\n  }\n}\n</script>\n</head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/index.tsx\"></script>\n  </body>\n</html>"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": 1765467089977,
+    "doneTimestamp": 1765467092822
+  },
+  {
+    "id": 41,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "const firebaseConfig = {\n  apiKey: \"AIzaSyC-mAVgxBwiS6yIIniB02vchVrfQIZ6M_U\",\n  authDomain: \"careerlaunch-os.firebaseapp.com\",\n  projectId: \"careerlaunch-os\",\n  storageBucket: \"careerlaunch-os.firebasestorage.app\",\n  messagingSenderId: \"579270865566\",\n  appId: \"1:579270865566:web:38a3b9e24ca805b603018f\"\n};\n",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765467946129
+  },
+  {
+    "id": 42,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Defining Firebase Config**\n\nI'm currently focused on integrating the Firebase configuration. I'm taking the details provided and working out how to best integrate it within the `services/firebase.ts` file. My goal is to set up the foundation for interacting with Firebase services.\n\n\n**Refactoring Firebase Integration**\n\nI've located `services/firebase.ts` and am replacing the placeholder configuration with the actual credentials. This will enable proper authentication and data interactions. I'm carefully reviewing the existing structure to ensure seamless integration and avoid disrupting any existing functionality. The goal is to establish a robust and secure connection to the Firebase services.\n\n\n**Updating Firebase Configuration**\n\nI've just finished replacing the placeholder configuration in `services/firebase.ts` with the new Firebase project details. This config includes the API key, auth domain, project ID, storage bucket, messaging sender ID, and app ID. I'm now verifying that this new configuration enables proper initialization of the Firebase application. My next step will be to test this integration.\n\n\n**Initializing Firebase Safely**\n\nI'm now implementing robust error handling within the Firebase initialization. I've added a `try-catch` block around `initializeApp`, `getAuth`, and `getFirestore` to gracefully handle potential configuration errors and prevent the application from crashing. If initialization fails, a warning message guides the user to update `services/firebase.ts`. This ensures a more stable and user-friendly experience, as it anticipates potential configuration issues and provides clear troubleshooting steps. I've also implemented error checks for authentication, signout, and user changes.\n\n\n**Saving User Progress Efficiently**\n\nI've just finished implementing a function to save user progress efficiently. I'm focusing on minimizing data transfer by only storing completion statuses (task IDs) within a `progressMap`. This map, keyed by task ID, indicates whether a task is complete. It also includes an `lastUpdated` timestamp. I'm also saving the progress data to Firestore using `setDoc` with the `merge: true` option to avoid overwriting existing user data. Error handling is included to ensure the code does not crash.\n\n\n**Implementing Progress Retrieval**\n\nI've just added a new `loadProgress` function to efficiently retrieve user progress data from Firestore. This function attempts to fetch the `progressMap` object from the user's document and returns it. I've also implemented error handling within a `try-catch` block to gracefully manage any potential issues during data retrieval and log any errors. If there are any problems retrieving the data, it returns `null`. This will help to provide a more stable retrieval process.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765467946129,
+    "doneTimestamp": 1765468040179
+  },
+  {
+    "id": 43,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "I will update `services/firebase.ts` with the specific Firebase configuration keys you provided. This will enable authentication and database syncing for your app.\n\n# Updated files:\n\n## services/firebase.ts\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765468040179,
+    "doneTimestamp": 1765468040186
+  },
+  {
+    "id": 44,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "services/firebase.ts",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Update Firebase configuration with user provided keys",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import { initializeApp } from \"firebase/app\";\nimport { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged, User } from \"firebase/auth\";\nimport { getFirestore, doc, setDoc, getDoc } from \"firebase/firestore\";\nimport { Domain } from \"../types\";\n\n// !!! IMPORTANT: REPLACE THIS WITH YOUR FIREBASE PROJECT CONFIGURATION !!!\n// Go to https://console.firebase.google.com/ -> Create Project -> Add Web App -> Copy Config\nconst firebaseConfig = {\n  apiKey: \"AIzaSyC-mAVgxBwiS6yIIniB02vchVrfQIZ6M_U\",\n  authDomain: \"careerlaunch-os.firebaseapp.com\",\n  projectId: \"careerlaunch-os\",\n  storageBucket: \"careerlaunch-os.firebasestorage.app\",\n  messagingSenderId: \"579270865566\",\n  appId: \"1:579270865566:web:38a3b9e24ca805b603018f\"\n};\n\n// Initialize Firebase\n// We wrap in a try-catch to prevent the app from crashing if config is invalid\nlet app, auth, db, googleProvider;\n\ntry {\n  app = initializeApp(firebaseConfig);\n  auth = getAuth(app);\n  db = getFirestore(app);\n  googleProvider = new GoogleAuthProvider();\n} catch (error) {\n  console.warn(\"Firebase not initialized. Please update services/firebase.ts with your config.\");\n}\n\nexport const authService = {\n  signIn: async () => {\n    if (!auth) throw new Error(\"Firebase not configured\");\n    try {\n      const result = await signInWithPopup(auth, googleProvider);\n      return result.user;\n    } catch (error) {\n      console.error(\"Error signing in\", error);\n      throw error;\n    }\n  },\n\n  logout: async () => {\n    if (!auth) return;\n    try {\n      await signOut(auth);\n    } catch (error) {\n      console.error(\"Error signing out\", error);\n    }\n  },\n\n  onUserChanged: (callback: (user: User | null) => void) => {\n    if (!auth) return () => {};\n    return onAuthStateChanged(auth, callback);\n  }\n};\n\nexport const dataService = {\n  // Save only the completion status (IDs) to save bandwidth and allow syllabus updates\n  saveProgress: async (userId: string, domains: Domain[]) => {\n    if (!db) return;\n    \n    // Create a map of { taskId: boolean }\n    const progressMap: Record<string, boolean> = {};\n    \n    domains.forEach(domain => {\n      domain.sections.forEach(section => {\n        section.tasks.forEach(task => {\n          if (task.isCompleted) {\n            progressMap[task.id] = true;\n          }\n        });\n      });\n    });\n\n    try {\n      await setDoc(doc(db, \"users\", userId), { \n        progress: progressMap,\n        lastUpdated: new Date().toISOString() \n      }, { merge: true });\n    } catch (error) {\n      console.error(\"Error saving progress\", error);\n    }\n  },\n\n  loadProgress: async (userId: string): Promise<Record<string, boolean> | null> => {\n    if (!db) return null;\n    try {\n      const docRef = doc(db, \"users\", userId);\n      const docSnap = await getDoc(docRef);\n\n      if (docSnap.exists()) {\n        return docSnap.data().progress as Record<string, boolean>;\n      }\n      return null;\n    } catch (error) {\n      console.error(\"Error loading progress\", error);\n      return null;\n    }\n  }\n};"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": 1765468040188,
+    "doneTimestamp": 1765468048763
+  },
+  {
+    "id": 46,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "Fix the following errors:\nError signing in\nFirebase: Error (auth/unauthorized-domain).",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765468091626
+  },
+  {
+    "id": 47,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Analyzing the Firebase Error**\n\nI'm currently focused on the `Firebase: Error (auth/unauthorized-domain)`. It seems the issue stems from an unlisted domain. I'm unable to access the Firebase console, so I'm now exploring common troubleshooting steps based on the error's typical cause. I'm thinking through potential solutions based on standard practice for this error.\n\n\n**Reviewing the Configuration**\n\nI'm now revisiting the configuration file the user provided. The crucial piece of the puzzle seems to be the context of execution: the user's environment. The key question is whether they're in a preview environment with dynamic domains, or have they added `localhost` to the authorized domains in Firebase. I can't directly alter the console, as I'm an AI. I need to figure out what they have done and why they are having this issue.\n\n\n**Addressing the Root Cause**\n\nI'm zeroing in on the `authDomain` and the potential for a domain mismatch. It seems the user's setup might involve dynamic preview environments. I'm focusing on providing very explicit instructions on how to add the correct domain to the Firebase Console's Authorized Domains. I'm thinking about how to tailor the error message in the code to be actionable and informative, highlighting the key solution. It's a security rule I cannot bypass in code.\n\n\n**Refining Error Handling**\n\nI'm now revising the error handling in `App.tsx` and `services/firebase.ts`. The generic alert for the unauthorized domain error isn't helpful. My plan is to modify `App.tsx` to specifically catch the `auth/unauthorized-domain` error and alert the user with their current domain. This will allow them to update the Firebase console with the domain. I'm focusing on providing direct feedback within the app to guide the user towards a solution.\n\n\n**Implementing the Solution**\n\nI've updated `App.tsx` with targeted error handling for the `auth/unauthorized-domain` issue. Now, when the error occurs, it fetches the current domain and prompts the user to add it to their Firebase Console's Authorized Domains. I'm satisfied that this provides a clear, actionable solution for the user within the code itself.\n\n\n**Verifying Configuration & Error Handling**\n\nI'm now focusing on making sure the `firebaseConfig` is actually being used and that there are no gaps in the error handling. Although I confirmed the config's presence, I'll further audit `App.tsx` and `services/firebase.ts` for robustness. I am now updating `App.tsx` and verifying the provided config. The key thing is to make sure the user's domain is displayed so they can authorize it.\n\n\n**Adding Explicit Error Message**\n\nI'm enhancing the error handling in `App.tsx` further. I'm introducing specific logic to check the current window's host to display an explicit message with the problematic domain, rather than just an alert saying that the user needs to update the config. This will directly instruct the user to update the Firebase console. I'm also ensuring the message is displayed if the specific domain is not listed.\n```typescript\nimport React, { useEffect } from 'react';\nimport { authService } from './services/firebase'; // Assuming you have an authService\nimport './App.css'; // Assuming you have an App.css\n\nfunction App() {\n\n  const handleSignIn = async () => {\n    try {\n      await authService.signIn();\n    } catch (e) {\n      console.error(\"signIn error:\", e);\n      if (e?.code === 'auth/unauthorized-domain') {\n        const currentHost = window.location.hostname;\n        alert(`Authentication Error: The domain \"${currentHost}\" is not authorized for Firebase authentication. Please add it to the Authorized Domains in your Firebase Console.`);\n      } else if (e?.code === 'auth/api-key-not-valid') {\n        alert(\"Configuration Error: Invalid Firebase API Key. Please check services/firebase.ts.\");\n      } else {\n        // General fallback\n         alert(\"Sign in failed: \" + (e.message || \"Unknown error\"));\n      }\n    }\n  };\n\n  return (\n    <div className=\"App\">\n      <header className=\"App-header\">\n        <button onClick={handleSignIn}>Sign in with Google</button>\n      </header>\n    </div>\n  );\n}\n\nexport default App;\n```\n\n**Revising Sign-In Errors**\n\nI'm now revising the sign-in error handling in `App.tsx` further. I am targeting specific error codes to determine the messaging displayed to the user. I'm making sure `auth/api-key-not-valid` gets a specific error message. I'm focusing on ensuring clear and actionable guidance for the user for both domain and config issues.\n\n\n**Finalizing the Error Messages**\n\nI've carefully reviewed and refined all the error messages in `App.tsx`. Specifically, I focused on clearly differentiating and addressing the `auth/api-key-not-valid` case.  I am confident that the user now receives tailored, actionable instructions for all potential configuration and domain issues during sign-in. This should vastly improve their experience.\n\n\n**Enhancing Domain Management**\n\nI'm now revising domain management within the application. I need to make the process of setting the authorized domains simpler, since there are many places to configure this. I'm focusing on making sure there's no confusion by showing the user the correct domain, based on their environment.\nI'm looking at how I can refactor the process for both local and hosted environments.\n\n\n**Simplifying Domain Authorization**\n\nI am now working to streamline domain authorization. I realize the many places this must be configured can be confusing. I want to make the process smoother, especially for local vs. deployed environments. The key is surfacing the correct domain for authorization to the user.\n\n\n**Optimizing Error Prompts**\n\nI'm now revising the domain authorization message to be even more helpful. I'm taking into account the user's specific context, whether local or deployed, to show the correct information. The goal is to make the process more intuitive, leading to less user frustration. I'm creating a conditional statement to display a specific, tailored message, depending on the environment.\n\n\n**Integrating Enhanced Prompts**\n\nI'm integrating improved error prompts directly into the component. My goal is to make the experience seamless. I'm focusing on the user, and providing them with an easy way to understand the domain authorization in their environment. I am using the new information to help the user resolve the issue.\n\nI'm now revising domain management within the application. I need to make the process of setting the authorized domains simpler, since there are many places to configure this. I'm focusing on making sure there's no confusion by showing the user the correct domain, based on their environment.\nI'm looking at how I can refactor the process for both local and hosted environments.\nI am now working to streamline domain authorization. I realize the many places this must be configured can be confusing. I want to make the process smoother, especially for local vs. deployed environments. The key is surfacing the correct domain for authorization to the user.\nI'm now revising the domain authorization message to be even more helpful. I'm taking into account the user's specific context, whether local or deployed, to show the correct information. The goal is to make the process more intuitive, leading to less user frustration. I'm creating a conditional statement to display a specific, tailored message, depending on the environment.\n\n\n**Refining Domain Authorization**\n\nI am integrating conditional error messages to clarify domain authorization, depending on the environment. I'm prioritizing direct user guidance and streamlined authorization instructions. My current focus is to ensure the displayed domain is accurate for both local development and deployed environments.\n\n\n**Implementing Environment-Specific Prompts**\n\nI'm now integrating environment-specific prompts in `App.tsx`. I'm using conditional logic to show the correct domain instructions for local development versus deployed environments, making the domain authorization process more user-friendly. I'm focusing on ensuring clarity and ease of use in all scenarios.\n\n\n**Enhancing Error Reporting**\n\nI'm working to make the error messages more concise and targeted, especially for domain authorization. I want to replace the alert boxes with more streamlined and specific UI elements within the app. I am aiming for clear instructions for both local and deployed scenarios and how to resolve the issue with the domain.\n\n```xml\n<div className=\"App\">\n  <header className=\"App-header\">\n    <button onClick={handleSignIn}>Sign in with Google</button>\n  </header>\n  {error && (\n    <div className=\"error-message\">\n      {error.message}\n      {error.code === 'auth/unauthorized-domain' && (\n        <>\n          <p>The domain {window.location.hostname} is not authorized.</p>\n          <p>Please add this domain to your Firebase Console under Authentication > Settings > Authorized domains.</p>\n        </>\n      )}\n    </div>\n  )}\n</div>\n```\nI am integrating conditional error messages to clarify domain authorization, depending on the environment. I'm prioritizing direct user guidance and streamlined authorization instructions. My current focus is to ensure the displayed domain is accurate for both local development and deployed environments.\n```\nI am now integrating environment-specific prompts in `App.tsx`. I'm using conditional logic to show the correct domain instructions for local development versus deployed environments, making the domain authorization process more user-friendly. I'm focusing on ensuring clarity and ease of use in all scenarios.\n```\nI am now updating the previous information.\nI'm updating the previous information.\n```javascript\nimport React, { useEffect, useState } from 'react';\nimport { authService } from './services/firebase';\nimport './App.css';\n\nfunction App() {\n    const [error, setError] = useState(null);\n\n    const handleSignIn = async () => {\n        try {\n            await authService.signIn();\n            setError(null);\n        } catch (e) {\n            console.error(\"signIn error:\", e);\n            if (e?.code === 'auth/unauthorized-domain') {\n                setError({ code: e.code, message: `Authentication Error: The domain \"${window.location.hostname}\" is not authorized for Firebase authentication. Please add it to the Authorized Domains in your Firebase Console.` });\n            } else if (e?.code === 'auth/api-key-not-valid') {\n                setError({ code: e.code, message: \"Configuration Error: Invalid Firebase API Key. Please check services/firebase.ts.\" });\n            } else {\n                setError({ code: e.code, message: \"Sign in failed: \" + (e.message || \"Unknown error\") });\n            }\n        }\n    };\n\n    return (\n        <div className=\"App\">\n            <header className=\"App-header\">\n                <button onClick={handleSignIn}>Sign in with Google</button>\n            </header>\n            {error && (\n                <div className=\"error-message\">\n                    {error.message}\n                    {error.code === 'auth/unauthorized-domain' && (\n                        <>\n                            <p>The domain {window.location.hostname} is not authorized.</p>\n                            <p>Please add this domain to your Firebase Console under Authentication > Settings > Authorized domains.</p>\n                        </>\n                    )}\n                </div>\n            )}\n        </div>\n    );\n}\n\nexport default App;\n```\n```\nI'm now refining the error message display logic. I am transitioning from `alert` boxes to a more integrated UI element within the app itself. The focus is to make sure the prompts are more informative, and to avoid disrupting the user experience with distracting popup boxes.\n```\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765468091626,
+    "doneTimestamp": 1765468159421
+  },
+  {
+    "id": 48,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "The error `Firebase: Error (auth/unauthorized-domain)` means that the website URL where your app is currently running (e.g., `localhost` or a preview URL) has not been added to the \"Authorized Domains\" list in your Firebase Console. This is a security feature of Firebase.\n\nI have updated the app to detect this specific error and show you a helpful popup with the exact domain name you need to add.\n\n### **How to Fix This (Action Required):**\n\n1.  **Copy the Domain**: When you try to sign in now, the app will show you the domain (e.g., `5173-your-app.preview.com`). Copy it.\n2.  **Go to Firebase Console**: Open [console.firebase.google.com](https://console.firebase.google.com/).\n3.  **Navigate**: Go to **Authentication** -> **Settings** -> **Authorized Domains**.\n4.  **Add Domain**: Click **Add Domain**, paste the URL you copied, and click **Add**.\n5.  **Retry**: Wait about 30 seconds and try signing in again.\n\nHere is the code update to handle these errors gracefully:\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": 1765468159421,
+    "doneTimestamp": 1765468159421
+  },
+  {
+    "id": 49,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "App.tsx",
+          "generationType": 1,
+          "isDone": true,
+          "description": "Improve error handling to guide user when domain is not authorized in Firebase",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "import React, { useState, useEffect } from 'react';\nimport Layout from './components/Layout';\nimport Dashboard from './components/Dashboard';\nimport DomainTracker from './components/DomainTracker';\nimport { INITIAL_DOMAINS } from './data';\nimport { Domain, View } from './types';\nimport { authService, dataService } from './services/firebase';\nimport { User } from 'firebase/auth';\n\nfunction App() {\n  const [domains, setDomains] = useState<Domain[]>(INITIAL_DOMAINS);\n  const [currentView, setCurrentView] = useState<View>('dashboard');\n  const [activeDomainId, setActiveDomainId] = useState<string | null>(null);\n  const [user, setUser] = useState<User | null>(null);\n  const [isSyncing, setIsSyncing] = useState(false);\n\n  // Load from local storage on mount (immediate offline support)\n  useEffect(() => {\n    const savedData = localStorage.getItem('careerLaunchData');\n    if (savedData) {\n      try {\n        setDomains(JSON.parse(savedData));\n      } catch (e) {\n        console.error(\"Failed to load local data\", e);\n      }\n    }\n  }, []);\n\n  // Listen for Auth Changes and Sync\n  useEffect(() => {\n    const unsubscribe = authService.onUserChanged(async (currentUser) => {\n      setUser(currentUser);\n      \n      if (currentUser) {\n        setIsSyncing(true);\n        // Load cloud progress\n        const cloudProgress = await dataService.loadProgress(currentUser.uid);\n        \n        if (cloudProgress) {\n          // Merge cloud progress with current domains\n          setDomains(prevDomains => \n            prevDomains.map(d => ({\n              ...d,\n              sections: d.sections.map(s => ({\n                ...s,\n                tasks: s.tasks.map(t => ({\n                  ...t,\n                  isCompleted: cloudProgress[t.id] ?? t.isCompleted\n                }))\n              }))\n            }))\n          );\n        } else {\n          // New user or no cloud data: Save current local state to cloud\n          await dataService.saveProgress(currentUser.uid, domains);\n        }\n        setIsSyncing(false);\n      }\n    });\n\n    return () => unsubscribe();\n  }, []);\n\n  // Save to Local Storage + Cloud on any change\n  useEffect(() => {\n    // 1. Local Storage\n    localStorage.setItem('careerLaunchData', JSON.stringify(domains));\n\n    // 2. Cloud Storage (Debounced slightly ideally, but direct here for simplicity)\n    if (user && !isSyncing) {\n      dataService.saveProgress(user.uid, domains);\n    }\n  }, [domains, user]);\n\n  const handleDomainSelect = (id: string) => {\n    setActiveDomainId(id);\n    setCurrentView('domain');\n    window.scrollTo({ top: 0, behavior: 'smooth' });\n  };\n\n  const handleBackToDashboard = () => {\n    setActiveDomainId(null);\n    setCurrentView('dashboard');\n    window.scrollTo({ top: 0, behavior: 'smooth' });\n  };\n\n  const handleToggleTask = (domainId: string, sectionId: string, taskId: string) => {\n    setDomains(prevDomains => \n      prevDomains.map(d => {\n        if (d.id !== domainId) return d;\n        return {\n          ...d,\n          sections: d.sections.map(s => {\n            if (s.id !== sectionId) return s;\n            return {\n              ...s,\n              tasks: s.tasks.map(t => {\n                if (t.id !== taskId) return t;\n                return { ...t, isCompleted: !t.isCompleted };\n              })\n            };\n          })\n        };\n      })\n    );\n  };\n\n  const handleSignIn = async () => {\n    try {\n      await authService.signIn();\n    } catch (e: any) {\n      // Specific error handling for common Firebase config issues\n      if (e?.code === 'auth/unauthorized-domain') {\n        const currentDomain = window.location.hostname;\n        alert(\n          `Firebase Error: Unauthorized Domain\\n\\n` +\n          `Your app is running on \"${currentDomain}\", but this domain is not allowed in your Firebase Console.\\n\\n` +\n          `TO FIX:\\n` +\n          `1. Go to Firebase Console -> Authentication -> Settings -> Authorized Domains\\n` +\n          `2. Click \"Add Domain\"\\n` +\n          `3. Type: ${currentDomain}\\n` +\n          `4. Wait 30 seconds and try again.`\n        );\n      } else if (e?.code === 'auth/operation-not-allowed') {\n        alert(\"Firebase Error: Google Sign-In is not enabled. Go to Firebase Console > Authentication > Sign-in method and enable 'Google'.\");\n      } else if (e?.code === 'auth/popup-closed-by-user') {\n        // User just closed the popup, no error needed\n      } else if (e?.code === 'auth/api-key-not-valid') {\n        alert(\"Firebase Error: The API Key in services/firebase.ts is invalid.\");\n      } else {\n        console.error(\"Sign In Error:\", e);\n        alert(`Sign in failed: ${e?.message || \"Check console for details\"}`);\n      }\n    }\n  };\n\n  const handleSignOut = async () => {\n    await authService.logout();\n  };\n\n  const activeDomain = domains.find(d => d.id === activeDomainId);\n\n  return (\n    <Layout \n      onDashboardClick={handleBackToDashboard}\n      user={user}\n      onSignIn={handleSignIn}\n      onSignOut={handleSignOut}\n    >\n      {currentView === 'dashboard' ? (\n        <>\n          <div className=\"mb-8 animate-in fade-in slide-in-from-bottom-4 duration-500 flex flex-col md:flex-row md:items-end justify-between gap-4\">\n            <div>\n              <h2 className=\"text-3xl font-bold text-gray-900 tracking-tight\">Your Learning Roadmap</h2>\n              <p className=\"text-gray-500 mt-2 text-lg\">Track your progress from beginner to FAANG-ready engineer.</p>\n            </div>\n            {user && (\n              <div className=\"flex items-center gap-2 text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100\">\n                <div className=\"w-2 h-2 rounded-full bg-emerald-500 animate-pulse\"></div>\n                Cloud Sync Active\n              </div>\n            )}\n          </div>\n          <Dashboard \n            domains={domains} \n            onSelectDomain={handleDomainSelect} \n          />\n        </>\n      ) : (\n        activeDomain && (\n          <DomainTracker \n            domain={activeDomain} \n            onBack={handleBackToDashboard}\n            onToggleTask={handleToggleTask}\n          />\n        )\n      )}\n    </Layout>\n  );\n}\n\nexport default App;"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": 1765468160074,
+    "doneTimestamp": 1765468176401
+  }
+]

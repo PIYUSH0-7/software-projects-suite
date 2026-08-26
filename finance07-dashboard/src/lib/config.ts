@@ -1,0 +1,12 @@
+const firebaseConfig = {
+  "projectId": "gen-lang-client-0185400864",
+  "appId": "1:137880433082:web:beb0050be234cafd27ad83",
+  "apiKey": "AIzaSyD1eVs450eyXSx4Kuv3hePZNl5Qgrw67NM",
+  "authDomain": "gen-lang-client-0185400864.firebaseapp.com",
+  "firestoreDatabaseId": "ai-studio-06c6e5d3-9243-45d3-a320-eb62770cdc15",
+  "storageBucket": "gen-lang-client-0185400864.firebasestorage.app",
+  "messagingSenderId": "137880433082",
+  "measurementId": ""
+};
+
+export default firebaseConfig;

@@ -1,0 +1,121 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Common helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function getUser() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    function hasRole(role) {
+      return isSignedIn() && 
+             exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+             getUser().data.role == role;
+    }
+
+    function isTeacher() {
+      return hasRole('teacher');
+    }
+
+    function isAdmin() {
+      return hasRole('admin');
+    }
+
+    // 1. Users Collection Rules
+    match /users/{userId} {
+      // Any signed-in user can read another user's profile card (for connection maker)
+      allow read: if isSignedIn();
+      
+      // A user can create or update their own profile, but admins can manage any user.
+      allow create: if isSignedIn() && isOwner(userId);
+      allow update: if isSignedIn() && (isOwner(userId) || isAdmin());
+      allow delete: if isAdmin();
+    }
+
+    // 2. Attendance Records Rules
+    match /attendance_records/{recordId} {
+      // Students can read their own attendance. Teachers can read all attendance for logging. Admins can read all.
+      allow read: if isSignedIn() && (
+        resource.data.studentId == request.auth.uid || isTeacher() || isAdmin()
+      );
+      
+      // Create is allowed by Teachers or Admins
+      allow create: if isSignedIn() && (isTeacher() || isAdmin());
+      
+      // Update is allowed ONLY by Admin (Teachers can log, but only Admins can modify/override)
+      allow update: if isSignedIn() && isAdmin();
+      
+      // Delete is allowed by Admin
+      allow delete: if isAdmin();
+    }
+
+    // 3. Internal Marks Records Rules
+    match /internal_marks_records/{recordId} {
+      // Students can read their own sessional marks card. Teachers and Admins can read all.
+      allow read: if isSignedIn() && (
+        resource.data.studentId == request.auth.uid || isTeacher() || isAdmin()
+      );
+      
+      // Create is allowed by Teachers or Admins
+      allow create: if isSignedIn() && (isTeacher() || isAdmin());
+      
+      // Update is allowed by Teachers (if not locked) or Admins (at any time)
+      allow update: if isSignedIn() && (
+        isAdmin() || (isTeacher() && resource.data.locked == false)
+      );
+      
+      // Delete is allowed by Admin
+      allow delete: if isAdmin();
+    }
+
+    // 4. Assignments Rules
+    match /assignments/{assignmentId} {
+      // Signed in users can read any assignment.
+      allow read: if isSignedIn();
+      
+      // Teachers and Admins can create, update, delete assignments
+      allow create, update, delete: if isSignedIn() && (isTeacher() || isAdmin());
+    }
+
+    // 5. Grievances Rules
+    match /grievances/{grievanceId} {
+      // Students can read their own grievances. Admins and Teachers can read all.
+      allow read: if isSignedIn() && (
+        resource.data.studentId == request.auth.uid || isTeacher() || isAdmin()
+      );
+      
+      // Students can create their own grievances. Admins can create too.
+      allow create: if isSignedIn() && (
+        request.resource.data.studentId == request.auth.uid || isAdmin()
+      );
+      
+      // Admin or HOD can update (reply and resolve) grievances. Students can edit theirs if pending.
+      allow update: if isSignedIn() && (
+        isAdmin() || isTeacher() || (resource.data.studentId == request.auth.uid && resource.data.status == 'Pending')
+      );
+      
+      // Delete is allowed by Admin
+      allow delete: if isAdmin();
+    }
+
+    // 6. Lectures Rules
+    match /lectures/{lectureId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update, delete: if isSignedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile and settings",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "monthlyBudget": { "type": "number" },
+        "dailySpendingLimit": { "type": "number" },
+        "currency": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "CreditCard": {
+      "title": "CreditCard",
+      "description": "Credit card details and limits",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "cardName": { "type": "string" },
+        "bankName": { "type": "string" },
+        "creditLimit": { "type": "number" },
+        "availableLimit": { "type": "number" },
+        "outstandingBalance": { "type": "number" },
+        "monthlyOutstanding": { "type": "number" },
+        "dueDay": { "type": "integer" },
+        "statementDay": { "type": "integer" },
+        "minimumDue": { "type": "number" },
+        "lastUpdated": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "cardName", "creditLimit", "dueDay", "statementDay"]
+    },
+    "Investment": {
+      "title": "Investment",
+      "description": "Financial assets and investments",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "type": { "type": "string", "enum": ["savings", "fd", "mutual_fund", "stock", "other"] },
+        "name": { "type": "string" },
+        "investedAmount": { "type": "number" },
+        "currentValue": { "type": "number" },
+        "growthRate": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "type", "name", "investedAmount", "currentValue"]
+    },
+    "Debt": {
+      "title": "Debt",
+      "description": "Borrowed money and repayment schedules",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "source": { "type": "string" },
+        "totalAmount": { "type": "number" },
+        "remainingBalance": { "type": "number" },
+        "interestRate": { "type": "number" },
+        "dueDate": { "type": "string", "format": "date" },
+        "repaymentSchedule": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "source", "totalAmount"]
+    },
+    "Transaction": {
+      "title": "Transaction",
+      "description": "Daily spending logs",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "amount": { "type": "number" },
+        "category": { "type": "string" },
+        "paymentMode": { "type": "string" },
+        "description": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "amount", "category", "date"]
+    },
+    "Plan": {
+      "title": "Plan",
+      "description": "Pre-planned expenses",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "amount": { "type": "number" },
+        "category": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "description": { "type": "string" },
+        "isPaid": { "type": "boolean" }
+      },
+      "required": ["uid", "amount", "date"]
+    },
+    "Notification": {
+      "title": "Notification",
+      "description": "App alerts and reminders",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "title": { "type": "string" },
+        "message": { "type": "string" },
+        "type": { "type": "string", "enum": ["due_date", "budget_limit", "utilization", "plan"] },
+        "isRead": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "title", "message", "createdAt"]
+    },
+    "SavingEntry": {
+      "title": "SavingEntry",
+      "description": "Savings for 1CR tracker",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "amount": { "type": "number" },
+        "source": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "growthRate": { "type": "number", "description": "Annual growth rate in %" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "amount", "source", "date"]
+    },
+    "BorrowingEntry": {
+      "title": "BorrowingEntry",
+      "description": "Borrowings for 1CR tracker",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "amount": { "type": "number" },
+        "source": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "growthRate": { "type": "number", "description": "Annual interest rate in %" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "amount", "source", "date"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": { "schema": "User", "description": "User profile" },
+    "/creditCards/{cardId}": { "schema": "CreditCard", "description": "Credit card details" },
+    "/investments/{investmentId}": { "schema": "Investment", "description": "Investment details" },
+    "/debts/{debtId}": { "schema": "Debt", "description": "Debt details" },
+    "/transactions/{transactionId}": { "schema": "Transaction", "description": "Daily transactions" },
+    "/plans/{planId}": { "schema": "Plan", "description": "Planned expenses" },
+    "/notifications/{notificationId}": { "schema": "Notification", "description": "User notifications" },
+    "/savings/{savingId}": { "schema": "SavingEntry", "description": "Savings entries" },
+    "/borrowings/{borrowingId}": { "schema": "BorrowingEntry", "description": "Borrowing entries" }
+  }
+}

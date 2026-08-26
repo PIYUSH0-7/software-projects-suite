@@ -1,0 +1,120 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile document containing personal and academic details as well as the role designation.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["student", "teacher", "admin"] },
+        "branch": { "type": "string" },
+        "currentSemester": { "type": "string" },
+        "skills": { "type": "array" },
+        "bio": { "type": "string" },
+        "linkedin": { "type": "string" },
+        "github": { "type": "string" }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "AttendanceRecord": {
+      "title": "AttendanceRecord",
+      "description": "A daily attendance log of a student's presence or absence for a specific subject, marked by faculty and optionally overridden by administrator.",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "branch": { "type": "string" },
+        "semester": { "type": "string" },
+        "subjectCode": { "type": "string" },
+        "subjectName": { "type": "string" },
+        "date": { "type": "string" },
+        "status": { "type": "string", "enum": ["Present", "Absent"] },
+        "recordedBy": { "type": "string" },
+        "approved": { "type": "boolean" },
+        "lastModifiedBy": { "type": "string" }
+      },
+      "required": ["studentId", "subjectCode", "date", "status"]
+    },
+    "InternalMarksRecord": {
+      "title": "InternalMarksRecord",
+      "description": "The sessional and quiz/assignment performance card of a student for a specific subject in a semester.",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "branch": { "type": "string" },
+        "semester": { "type": "string" },
+        "subjectCode": { "type": "string" },
+        "subjectName": { "type": "string" },
+        "st1": { "type": "number" },
+        "st2": { "type": "number" },
+        "st3": { "type": "number" },
+        "assignments": { "type": "number" },
+        "quizzes": { "type": "number" },
+        "attendancePercentage": { "type": "number" },
+        "calculatedTotal": { "type": "number" },
+        "locked": { "type": "boolean" },
+        "recordedBy": { "type": "string" }
+      },
+      "required": ["studentId", "subjectCode"]
+    },
+    "Assignment": {
+      "title": "Assignment",
+      "description": "Academic tasks or study notes posted by faculty for a specific semester, branch, and subject.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "subjectCode": { "type": "string" },
+        "subjectName": { "type": "string" },
+        "branch": { "type": "string" },
+        "semester": { "type": "string" },
+        "dueDate": { "type": "string" },
+        "uploadedBy": { "type": "string" },
+        "notesLink": { "type": "string" }
+      },
+      "required": ["title", "subjectCode", "semester", "branch"]
+    },
+    "Grievance": {
+      "title": "Grievance",
+      "description": "Student grievances or correction requests raised regarding attendance, marks, exams, or others.",
+      "type": "object",
+      "properties": {
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string", "enum": ["Attendance", "Marks", "Exam Form", "Other"] },
+        "status": { "type": "string", "enum": ["Pending", "Resolved"] },
+        "response": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "resolvedBy": { "type": "string" }
+      },
+      "required": ["studentId", "title", "description", "category", "status"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User profiles and academic roles."
+    },
+    "attendance_records/{recordId}": {
+      "schema": "AttendanceRecord",
+      "description": "Consolidated active student attendance entries."
+    },
+    "internal_marks_records/{recordId}": {
+      "schema": "InternalMarksRecord",
+      "description": "Student subject sessional cards."
+    },
+    "assignments/{assignmentId}": {
+      "schema": "Assignment",
+      "description": "Faculty study resources and assignments."
+    },
+    "grievances/{grievanceId}": {
+      "schema": "Grievance",
+      "description": "Grievances and HOD support tickets."
+    }
+  }
+}

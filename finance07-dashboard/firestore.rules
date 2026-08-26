@@ -1,0 +1,214 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    // Collection: users
+    // Document ID: userId (UID)
+    // Fields: uid, email, displayName, monthlyBudget, dailySpendingLimit, currency, createdAt
+    //
+    // Collection: creditCards
+    // Fields: uid, cardName, bankName, creditLimit, availableLimit, outstandingBalance, monthlyOutstanding, dueDay, statementDay, minimumDue, lastUpdated
+    //
+    // Collection: investments
+    // Fields: uid, type, name, investedAmount, currentValue, growthRate, createdAt
+    //
+    // Collection: debts
+    // Fields: uid, source, totalAmount, remainingBalance, interestRate, dueDate, repaymentSchedule, createdAt
+    //
+    // Collection: transactions
+    // Fields: uid, amount, category, paymentMode, description, date
+    //
+    // Collection: plans
+    // Fields: uid, amount, category, date, description, isPaid
+    //
+    // Collection: notifications
+    // Fields: uid, title, message, type, isRead, createdAt
+    //
+    // Collection: savings
+    // Fields: uid, amount, source, date, createdAt
+    //
+    // Collection: borrowings
+    // Fields: uid, amount, source, date, createdAt
+    // ===============================================================
+
+    // Helper Functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isDocOwner() {
+      return isAuthenticated() && request.auth.uid == resource.data.uid;
+    }
+
+    function isRequestOwner() {
+      return isAuthenticated() && request.auth.uid == request.resource.data.uid;
+    }
+
+    function isValidUser(data) {
+      return data.keys().hasAll(['uid', 'email']) &&
+             data.uid == request.auth.uid &&
+             data.email is string &&
+             (!('monthlyBudget' in data) || data.monthlyBudget is number) &&
+             (!('dailySpendingLimit' in data) || data.dailySpendingLimit is number) &&
+             (!('budgetDetails' in data) || data.budgetDetails is list) &&
+             (!('currency' in data) || data.currency is string) &&
+             (!('displayName' in data) || data.displayName is string) &&
+             (!('createdAt' in data) || data.createdAt is string);
+    }
+
+    function isValidCreditCard(data) {
+      return data.keys().hasAll(['uid', 'cardName', 'creditLimit']) &&
+             data.uid == request.auth.uid &&
+             data.cardName is string && data.cardName.size() > 0 && data.cardName.size() < 100 &&
+             data.creditLimit is number && data.creditLimit >= 0 &&
+             (!('bankName' in data) || data.bankName is string) &&
+             (!('availableLimit' in data) || data.availableLimit is number) &&
+             (!('outstandingBalance' in data) || data.outstandingBalance is number) &&
+             (!('monthlyOutstanding' in data) || data.monthlyOutstanding is number) &&
+             (!('dueDay' in data) || (data.dueDay is number && data.dueDay >= 1 && data.dueDay <= 31)) &&
+             (!('statementDay' in data) || (data.statementDay is number && data.statementDay >= 1 && data.statementDay <= 31)) &&
+             (!('minimumDue' in data) || data.minimumDue is number) &&
+             (!('lastUpdated' in data) || data.lastUpdated is string);
+    }
+
+    function isValidInvestment(data) {
+      return data.keys().hasAll(['uid', 'type', 'name', 'investedAmount', 'currentValue']) &&
+             data.uid == request.auth.uid &&
+             data.type in ['savings', 'fd', 'mutual_fund', 'stock', 'other'] &&
+             data.name is string && data.name.size() > 0 && data.name.size() < 100 &&
+             data.investedAmount is number && data.investedAmount >= 0 &&
+             data.currentValue is number && data.currentValue >= 0 &&
+             (!('growthRate' in data) || data.growthRate is number) &&
+             (!('createdAt' in data) || data.createdAt is string);
+    }
+
+    function isValidDebt(data) {
+      return data.keys().hasAll(['uid', 'source', 'totalAmount']) &&
+             data.uid == request.auth.uid &&
+             data.source is string && data.source.size() > 0 && data.source.size() < 100 &&
+             data.totalAmount is number && data.totalAmount >= 0 &&
+             (!('remainingBalance' in data) || data.remainingBalance is number) &&
+             (!('interestRate' in data) || data.interestRate is number) &&
+             (!('dueDate' in data) || data.dueDate is string) &&
+             (!('repaymentSchedule' in data) || data.repaymentSchedule is string) &&
+             (!('createdAt' in data) || data.createdAt is string);
+    }
+
+    function isValidTransaction(data) {
+      return data.keys().hasAll(['uid', 'amount', 'category', 'date']) &&
+             data.uid == request.auth.uid &&
+             data.amount is number &&
+             data.category is string &&
+             data.date is string &&
+             (!('paymentMode' in data) || data.paymentMode is string) &&
+             (!('description' in data) || data.description is string);
+    }
+
+    function isValidPlan(data) {
+      return data.keys().hasAll(['uid', 'amount', 'date']) &&
+             data.uid == request.auth.uid &&
+             data.amount is number &&
+             data.date is string &&
+             (!('isFixed' in data) || data.isFixed is bool) &&
+             (!('fixedDay' in data) || data.fixedDay is number) &&
+             (!('isPaid' in data) || data.isPaid is bool) &&
+             (!('category' in data) || data.category is string) &&
+             (!('description' in data) || data.description is string);
+    }
+
+    function isValidNotification(data) {
+      return data.keys().hasAll(['uid', 'title', 'message', 'createdAt']) &&
+             data.uid == request.auth.uid &&
+             data.title is string &&
+             data.message is string;
+    }
+
+    function isValidSaving(data) {
+      return data.keys().hasAll(['uid', 'amount', 'source', 'date']) &&
+             data.uid == request.auth.uid &&
+             data.amount is number &&
+             data.source is string &&
+             data.date is string &&
+             (!('growthRate' in data) || data.growthRate is number);
+    }
+
+    function isValidBorrowing(data) {
+      return data.keys().hasAll(['uid', 'amount', 'source', 'date']) &&
+             data.uid == request.auth.uid &&
+             data.amount is number &&
+             data.source is string &&
+             data.date is string &&
+             (!('growthRate' in data) || data.growthRate is number);
+    }
+
+    // Rules
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId) && isValidUser(request.resource.data);
+      allow update: if isOwner(userId) && isValidUser(request.resource.data);
+      allow delete: if isOwner(userId);
+    }
+
+    match /creditCards/{cardId} {
+      allow read: if isDocOwner();
+      allow create: if isRequestOwner() && isValidCreditCard(request.resource.data);
+      allow update: if isDocOwner() && isValidCreditCard(request.resource.data);
+      allow delete: if isDocOwner();
+    }
+
+    match /investments/{investmentId} {
+      allow read: if isDocOwner();
+      allow create: if isRequestOwner() && isValidInvestment(request.resource.data);
+      allow update: if isDocOwner() && isValidInvestment(request.resource.data);
+      allow delete: if isDocOwner();
+    }
+
+    match /debts/{debtId} {
+      allow read: if isDocOwner();
+      allow create: if isRequestOwner() && isValidDebt(request.resource.data);
+      allow update: if isDocOwner() && isValidDebt(request.resource.data);
+      allow delete: if isDocOwner();
+    }
+
+    match /transactions/{transactionId} {
+      allow read: if isDocOwner();
+      allow create: if isRequestOwner() && isValidTransaction(request.resource.data);
+      allow update: if isDocOwner() && isValidTransaction(request.resource.data);
+      allow delete: if isDocOwner();
+    }
+
+    match /plans/{planId} {
+      allow read: if isDocOwner();
+      allow create: if isRequestOwner() && isValidPlan(request.resource.data);
+      allow update: if isDocOwner() && isValidPlan(request.resource.data);
+      allow delete: if isDocOwner();
+    }
+
+    match /notifications/{notificationId} {
+      allow read: if isDocOwner();
+      allow create: if isRequestOwner() && isValidNotification(request.resource.data);
+      allow update: if isDocOwner() && isValidNotification(request.resource.data);
+      allow delete: if isDocOwner();
+    }
+
+    match /savings/{savingId} {
+      allow read: if isDocOwner();
+      allow create: if isRequestOwner() && isValidSaving(request.resource.data);
+      allow update: if isDocOwner() && isValidSaving(request.resource.data);
+      allow delete: if isDocOwner();
+    }
+
+    match /borrowings/{borrowingId} {
+      allow read: if isDocOwner();
+      allow create: if isRequestOwner() && isValidBorrowing(request.resource.data);
+      allow update: if isDocOwner() && isValidBorrowing(request.resource.data);
+      allow delete: if isDocOwner();
+    }
+  }
+}

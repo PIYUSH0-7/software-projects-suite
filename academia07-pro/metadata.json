@@ -1,0 +1,10 @@
+{
+  "name": "Academia07 Pro",
+  "description": "An advanced, AI-powered academic portal for engineering students featuring a speech-to-text AI Lecture Processor, sessional study notes generators, sessional mock tests, predictive analytics, and a Gemini-based AI Tutor.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
