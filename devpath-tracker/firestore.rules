@@ -1,0 +1,91 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: /users/{userId}
+    // Document ID: userId
+    // Fields:
+    //   - uid: string (required)
+    //   - email: string (required)
+    //   - displayName: string (optional)
+    //   - photoURL: string (optional)
+    //   - lastLogin: string (optional)
+    //
+    // Collection: /users/{userId}/courses/{courseId}
+    // Document ID: courseId
+    // Fields:
+    //   - id: string (required)
+    //   - title: string (required)
+    //   - folderColor: string (required)
+    //   - isCompleted: boolean (required)
+    //   - pinCode: string (optional)
+    //   - skillAnalysis: string (optional)
+    //   - skillAnalysisCount: number (optional)
+    //   - completionData: map (optional)
+    //   - weeks: list (required)
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isValidEmail(email) {
+      return email is string && email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    }
+
+    function isValidUrl(url) {
+      return url is string && (url.matches("^https://.*") || url.matches("^http://.*"));
+    }
+
+    // ===============================================================
+    // Domain Validators
+    // ===============================================================
+    function isValidUser(data) {
+      return data.keys().hasAll(['uid', 'email']) &&
+             data.uid is string &&
+             data.email is string &&
+             isValidEmail(data.email);
+    }
+
+    function isValidCourse(data) {
+      return data.keys().hasAll(['id', 'title', 'folderColor', 'isCompleted', 'weeks']) &&
+             data.id is string &&
+             data.title is string && data.title.size() < 100 &&
+             data.folderColor is string &&
+             data.isCompleted is bool &&
+             data.weeks is list && data.weeks.size() <= 17;
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId) && isValidUser(request.resource.data);
+      allow update: if isOwner(userId) && isValidUser(request.resource.data);
+      
+      match /courses/{courseId} {
+        allow read: if isOwner(userId);
+        allow create: if isOwner(userId) && isValidCourse(request.resource.data);
+        allow update: if isOwner(userId) && isValidCourse(request.resource.data);
+        allow delete: if isOwner(userId);
+      }
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
