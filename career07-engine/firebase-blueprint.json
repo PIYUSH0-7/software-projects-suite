@@ -1,0 +1,79 @@
+{
+  "entities": {
+    "UserProgress": {
+      "title": "User Progress",
+      "description": "Stores completion status for learning tasks.",
+      "type": "object",
+      "properties": {
+        "progress": {
+          "type": "object",
+          "description": "A map of task IDs to completion status (boolean)."
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The last time the progress was updated."
+        }
+      },
+      "required": ["progress", "lastUpdated"]
+    },
+    "UserTask": {
+      "title": "User Task",
+      "description": "A task assigned to a user for a specific phase.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "phaseId": { "type": "string" },
+        "type": { "type": "string" },
+        "title": { "type": "string" },
+        "hoursRequired": { "type": "number" },
+        "deadline": { "type": "string", "format": "date-time" },
+        "status": { "type": "string" },
+        "submissionUrl": { "type": "string" },
+        "submittedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "phaseId", "type", "title", "hoursRequired", "deadline", "status"]
+    },
+    "PhaseStatus": {
+      "title": "Phase Status",
+      "description": "Tracks when a user starts a specific phase.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "phaseId": { "type": "string" },
+        "startDate": { "type": "string", "format": "date-time" },
+        "isStarted": { "type": "boolean" }
+      },
+      "required": ["userId", "phaseId", "startDate", "isStarted"]
+    },
+    "Holiday": {
+      "title": "Holiday",
+      "description": "A user-defined holiday that adjusts task deadlines.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "label": { "type": "string" }
+      },
+      "required": ["userId", "date", "label"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "UserProgress",
+      "description": "User-specific progress data."
+    },
+    "user_tasks/{taskId}": {
+      "schema": "UserTask",
+      "description": "Tasks assigned to users."
+    },
+    "phase_statuses/{statusId}": {
+      "schema": "PhaseStatus",
+      "description": "Phase start tracking."
+    },
+    "holidays/{holidayId}": {
+      "schema": "Holiday",
+      "description": "User holidays."
+    }
+  }
+}

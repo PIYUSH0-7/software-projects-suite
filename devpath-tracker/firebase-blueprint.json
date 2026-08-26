@@ -1,0 +1,80 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "lastLogin": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "Course": {
+      "title": "Course",
+      "description": "A single course or learning track",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "folderColor": { "type": "string" },
+        "isCompleted": { "type": "boolean" },
+        "pinCode": { "type": "string" },
+        "skillAnalysis": { "type": "string" },
+        "skillAnalysisCount": { "type": "number" },
+        "completionData": {
+          "type": "object",
+          "properties": {
+            "youtubeUrl": { "type": "string" },
+            "blogUrl": { "type": "string" }
+          }
+        },
+        "weeks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "weekNumber": { "type": "number" },
+              "startDate": { "type": "string" },
+              "summary": { "type": "string" },
+              "isExpanded": { "type": "boolean" },
+              "days": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "raw": { "type": "string" },
+                    "polished": { "type": "string" }
+                  }
+                }
+              },
+              "attachments": {
+                "type": "object",
+                "properties": {
+                  "leetCode": { "type": "string" },
+                  "wakaTime": { "type": "string" },
+                  "github": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "required": ["id", "title"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile document"
+    },
+    "/users/{userId}/courses/{courseId}": {
+      "schema": "Course",
+      "description": "Individual course data for a user"
+    }
+  }
+}
