@@ -1,0 +1,19 @@
+{
+  "name": "simplify-ai-report-prompt-generator",
+  "version": "1.0.0",
+  "description": "Office Daily Report Prompt Generator & Gemini Assistant Portal",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "gemini",
+    "prompt-generator",
+    "daily-report",
+    "office-report",
+    "ai"
+  ],
+  "author": "Pawan Gangwar",
+  "license": "MIT"
+}

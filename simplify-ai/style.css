@@ -1,0 +1,141 @@
+/* Simplify AI - Clean White Portal CSS (Mobile-First & Responsive) */
+
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --btn-gradient: linear-gradient(135deg, #2563eb 0%, #4f46e5 50%, #7c3aed 100%);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+  padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+/* Prevent iOS auto-zoom on input focus by keeping min font size 16px */
+input, select, textarea, button {
+  font-size: 16px !important;
+}
+
+@media (min-width: 640px) {
+  input, select, textarea {
+    font-size: 14px !important;
+  }
+}
+
+/* Custom Card & Shadows */
+.clean-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tool-card {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.tool-card:active, .tool-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  border-color: #93c5fd;
+}
+
+/* Gradient Primary Button */
+.btn-primary-gradient {
+  background: var(--btn-gradient);
+  background-size: 200% 200%;
+  transition: all 0.2s ease;
+  touch-action: manipulation;
+}
+
+.btn-primary-gradient:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px -6px rgba(37, 99, 235, 0.35);
+}
+
+.btn-primary-gradient:active {
+  transform: scale(0.98);
+  filter: brightness(0.95);
+}
+
+/* Toast Container (Mobile-Optimized) */
+#toast-container {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 90%;
+  max-width: 420px;
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  #toast-container {
+    top: auto;
+    bottom: 24px;
+    right: 24px;
+    left: auto;
+    transform: none;
+    width: auto;
+  }
+}
+
+.toast {
+  pointer-events: auto;
+  width: 100%;
+  background: #0f172a;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 12px 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 640px) {
+  .toast {
+    transform: translateY(60px);
+  }
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast-success {
+  border-left: 4px solid #10b981;
+}
+
+/* Floating Mobile Action Bar (Sticky at bottom for mobile) */
+.mobile-sticky-action {
+  position: sticky;
+  bottom: 12px;
+  z-index: 40;
+}
+
+/* Fade animation for views */
+.view-section {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.view-hidden {
+  display: none !important;
+}

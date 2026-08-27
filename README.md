@@ -1,4 +1,4 @@
-﻿# 🌟 Production Software & AI Applications Suite (Mono-Repo)
+# 🌟 Production Software & AI Applications Suite (Mono-Repo)
 > **A Curated Monorepo of Production-Grade SaaS Applications, Client Showcases & AI Tools**
 > Engineered by **[Piyush Gangwar](https://github.com/PIYUSH0-7)** • [piyush07.me](https://piyush07.me) • [developer.piyush07.me](https://developer.piyush07.me)
 
@@ -22,7 +22,8 @@ software-projects-suite/
 ├── 🎯 career07-engine/             # AI Career Trajectory, Skill Gap Analyzer & Goal Engine
 ├── 🕉️ krishna-guidance-ai/         # Interactive AI Philosophical & Mindfulness Assistant
 ├── 📄 interactive-web-resume/      # Dynamic Responsive Web Resume & Technical Timeline
-└── 📊 finance07-dashboard/         # Personal Expense Tracking & Financial Analytics
+├── 📊 finance07-dashboard/         # Personal Expense Tracking & Financial Analytics
+└── ⚡ simplify-ai/                 # Enterprise Daily Office Report Generator & Prompt Engine
 ```
 
 ---
@@ -38,6 +39,7 @@ software-projects-suite/
 | **05** | **Krishna Guidance AI** | [`krishna-guidance-ai`](./krishna-guidance-ai) | React • TypeScript • Gemini API | [Live Demo](https://krishna-07.vercel.app) | Philosophical mentor providing contextual guidance from the Gita. |
 | **06** | **Interactive Resume** | [`interactive-web-resume`](./interactive-web-resume) | React • TypeScript • Tailwind | [Live Demo](https://resume07-gules.vercel.app) | Modern, interactive web-based developer resume and portfolio timeline. |
 | **07** | **Finance07 Dashboard** | [`finance07-dashboard`](./finance07-dashboard) | React • TypeScript • Firebase | [Live Demo](https://finance-07.vercel.app) | Real-time personal financial analytics and expense budgeting tool. |
+| **08** | **Simplify AI** | [`simplify-ai`](./simplify-ai) | HTML5 • Vanilla JS • Tailwind • Netlify | [Live Demo](https://simplify-ai.netlify.app) | Intelligent Office Report Prompt Generator & standardized daily logging portal. |
 
 ---
 
@@ -46,7 +48,7 @@ software-projects-suite/
 - **TypeScript Strict Mode:** 100% type-safe codebase across all applications.
 - **Component Modularity:** Reusable UI components styled with utility-first Tailwind CSS.
 - **AI Tool Integration:** Structured prompting and streaming response handling via Gemini AI SDK.
-- **Zero Drift Architecture:** Production builds automated and verified via Vercel Edge Network.
+- **Zero Drift Architecture:** Production builds automated and verified via Vercel / Netlify Edge Networks.
 
 ---
 
