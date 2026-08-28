@@ -21,6 +21,7 @@
   const empDeptInput = document.getElementById('emp-dept');
   const reportDateInput = document.getElementById('report-date');
   const dateDisplay = document.getElementById('date-display');
+  const btnCopyOpenGemini = document.getElementById('btn-copy-open-gemini');
   const btnCopyPrompt = document.getElementById('btn-copy-prompt');
 
   // --- Date Formatting ---
@@ -136,10 +137,12 @@ Then, for every message I send, output ONLY the report in the exact format above
   }
 
   // --- Copy to Clipboard ---
-  async function copyText(text) {
+  async function copyText(text, successToastMessage = '📋 Prompt copied to clipboard!') {
+    let success = false;
     try {
       if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(text);
+        success = true;
       } else {
         const ta = document.createElement('textarea');
         ta.value = text;
@@ -148,15 +151,35 @@ Then, for every message I send, output ONLY the report in the exact format above
         document.body.appendChild(ta);
         ta.focus();
         ta.select();
-        document.execCommand('copy');
+        success = document.execCommand('copy');
         document.body.removeChild(ta);
       }
-      showToast('📋 Prompt copied to clipboard!');
-      return true;
+      if (success && successToastMessage) {
+        showToast(successToastMessage);
+      }
+      return success;
     } catch (err) {
-      console.error(err);
-      showToast('Copied to clipboard!');
-      return false;
+      console.error('Clipboard copy failed:', err);
+      // Fallback method
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        success = document.execCommand('copy');
+        document.body.removeChild(ta);
+        if (success && successToastMessage) {
+          showToast(successToastMessage);
+        }
+        return success;
+      } catch (fallbackErr) {
+        console.error('Fallback copy failed:', fallbackErr);
+        showToast('⚠️ Could not copy automatically. Please select text manually.');
+        return false;
+      }
     }
   }
 
@@ -220,12 +243,34 @@ Then, for every message I send, output ONLY the report in the exact format above
       updateDateDisplay();
     });
 
-    // Action Button: Copy Prompt
-    btnCopyPrompt.addEventListener('click', async () => {
-      if (navigator.vibrate) navigator.vibrate(40);
-      const prompt = generateGeminiPrompt();
-      await copyText(prompt);
-    });
+    // Action 1: Copy Prompt & Open Gemini
+    if (btnCopyOpenGemini) {
+      btnCopyOpenGemini.addEventListener('click', async () => {
+        if (navigator.vibrate) navigator.vibrate(40);
+        const prompt = generateGeminiPrompt();
+        
+        // Open Gemini in new tab immediately in user gesture to avoid popup blockers
+        const geminiTab = window.open('https://gemini.google.com/app', '_blank');
+        
+        const copied = await copyText(prompt, null);
+        if (copied) {
+          if (geminiTab) {
+            showToast('🚀 Prompt copied & Gemini opened! Paste with Ctrl+V');
+          } else {
+            showToast('📋 Prompt copied! Please open Gemini (popup was blocked)');
+          }
+        }
+      });
+    }
+
+    // Action 2: Copy Prompt Only
+    if (btnCopyPrompt) {
+      btnCopyPrompt.addEventListener('click', async () => {
+        if (navigator.vibrate) navigator.vibrate(30);
+        const prompt = generateGeminiPrompt();
+        await copyText(prompt, '📋 Prompt copied to clipboard!');
+      });
+    }
   }
 
   // --- Init ---

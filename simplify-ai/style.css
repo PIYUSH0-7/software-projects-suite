@@ -127,8 +127,12 @@ input, select, textarea, button {
 /* Floating Mobile Action Bar (Sticky at bottom for mobile) */
 .mobile-sticky-action {
   position: sticky;
-  bottom: 12px;
+  bottom: 0px;
   z-index: 40;
+  background: rgba(248, 250, 252, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 8px 0 12px 0;
 }
 
 /* Fade animation for views */
