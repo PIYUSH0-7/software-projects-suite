@@ -2,9 +2,9 @@
 
 ## 💡 Technical Thought of the Day
 
-A great resume highlights ownership and quantifiable impact, using strong action verbs to show your contributions.
+Strive for clean code, deep understanding, and daily incremental progress.
 
-*Daily Insight:* Refactor design patterns to improve scalability and maintainability.
+*Daily Insight:* Plan your weekly milestones, track progress velocity, and address blockers.
 
 <!-- THOUGHT_END -->
 
