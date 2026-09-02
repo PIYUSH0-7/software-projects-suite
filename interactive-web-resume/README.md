@@ -4,7 +4,7 @@
 
 Strive for clean code, deep understanding, and daily incremental progress.
 
-*Daily Insight:* Plan your weekly milestones, track progress velocity, and address blockers.
+*Daily Insight:* Focus on reducing algorithmic complexity and optimizing critical paths.
 
 <!-- THOUGHT_END -->
 
