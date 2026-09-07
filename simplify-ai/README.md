@@ -4,7 +4,7 @@
 
 Strive for clean code, deep understanding, and daily incremental progress.
 
-*Daily Insight:* Practice active learning by revising core concepts and teaching peers.
+*Daily Insight:* Test thoroughly for edge cases, null values, and boundary conditions.
 
 <!-- THOUGHT_END -->
 
