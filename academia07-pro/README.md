@@ -4,7 +4,7 @@
 
 Strive for clean code, deep understanding, and daily incremental progress.
 
-*Daily Insight:* Plan your weekly milestones, track progress velocity, and address blockers.
+*Daily Insight:* Optimize memory usage, garbage collection overhead, and resource disposal.
 
 <!-- THOUGHT_END -->
 
