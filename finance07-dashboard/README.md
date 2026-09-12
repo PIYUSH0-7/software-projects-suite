@@ -2,9 +2,9 @@
 
 ## 💡 Technical Thought of the Day
 
-Mastering software engineering requires relentless curiosity and structured daily execution.
+Write code today that your future self will thank you for tomorrow.
 
-*Daily Insight:* Practice active learning by revising core concepts and teaching peers.
+*Daily Insight:* Plan your weekly milestones, track progress velocity, and address blockers.
 
 <!-- THOUGHT_END -->
 
