@@ -2,7 +2,7 @@
 
 ## 💡 Technical Thought of the Day
 
-Strive for clean code, deep understanding, and daily incremental progress.
+Write code today that your future self will thank you for tomorrow.
 
 *Daily Insight:* Refactor design patterns to improve scalability and maintainability.
 
