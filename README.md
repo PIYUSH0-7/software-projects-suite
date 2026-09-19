@@ -2,9 +2,9 @@
 
 ## 💡 Technical Thought of the Day
 
-Write code today that your future self will thank you for tomorrow.
+Strive for clean code, deep understanding, and daily incremental progress.
 
-*Daily Insight:* Practice active learning by revising core concepts and teaching peers.
+*Daily Insight:* Focus on reducing algorithmic complexity and optimizing critical paths.
 
 <!-- THOUGHT_END -->
 
