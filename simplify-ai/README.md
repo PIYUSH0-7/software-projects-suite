@@ -4,7 +4,7 @@
 
 Strive for clean code, deep understanding, and daily incremental progress.
 
-*Daily Insight:* Focus on reducing algorithmic complexity and optimizing critical paths.
+*Daily Insight:* Optimize memory usage, garbage collection overhead, and resource disposal.
 
 <!-- THOUGHT_END -->
 

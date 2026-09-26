@@ -4,7 +4,7 @@
 
 Mastering software engineering requires relentless curiosity and structured daily execution.
 
-*Daily Insight:* Ensure clear, self-documenting code style with meaningful variable naming.
+*Daily Insight:* Focus on reducing algorithmic complexity and optimizing critical paths.
 
 <!-- THOUGHT_END -->
 
